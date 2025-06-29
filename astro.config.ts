@@ -11,6 +11,9 @@ const stylusMixin = `@require '${fileURLToPath(
 // https://astro.build/config
 export default defineConfig({
     srcDir: "./docs",
+    build: {
+        format: "preserve",
+    },
     integrations: [
         mdx(),
         icon({
