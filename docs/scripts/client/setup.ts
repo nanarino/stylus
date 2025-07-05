@@ -25,4 +25,6 @@ window.addEventListener("load", () => {
 /**
  * test
  */
-import "./fonts.spec"
+if (import.meta.env.DEV && top?.location?.hostname === "127.0.0.1") {
+    import("./fonts.spec")
+}

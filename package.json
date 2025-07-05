@@ -31,9 +31,10 @@
     },
     "devDependencies": {
         "@astrojs/mdx": "^4.3.0",
+        "@fontsource/jetbrains-mono": "^5.2.6",
         "@holy-two/data-theme": "^0.0.6",
-        "@types/node": "^22.15.31",
-        "astro": "^5.9.2",
+        "@types/node": "^22.16.0",
+        "astro": "^5.11.0",
         "astro-icon": "^1.1.5",
         "copy-to-clipboard": "^3.3.3",
         "css-doodle": "^0.42.6",
