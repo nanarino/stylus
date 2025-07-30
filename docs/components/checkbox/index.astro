@@ -21,6 +21,7 @@ let uuid: string
 if (!props.id) {
     uuid = crypto.randomUUID()
 }
+const hasLabel = Astro.slots.has("default")
 ---
 
 <span
@@ -38,5 +39,11 @@ if (!props.id) {
         disabled={props.disabled}
         onchange={props.onchange}
     />
-    <label class={`${prefix}-checkbox-label`} for={props.id || uuid}><slot /></label>
+    {
+        hasLabel ? (
+            <label class={`${prefix}-checkbox-label`} for={props.id || uuid}><slot /></label>
+        ): (
+            <span class={`${prefix}-checkbox-label`}></span>
+        )
+    }
 </span>

@@ -117,10 +117,10 @@ select.☘-select(disabled style="width:120px")
 
 自定义图标很容易，不需要覆盖 `select::picker-icon`，直接使用 `select>button:first-of-type` 来狸猫换太子，这便于利用到 `svg>symbol` 节省文档渲染
 
-<T class="☘-form-item">
-    <label>故障机型</label>
+<T tag="label" class="☘-form-item">
+    <span>故障机型</span>
     <T class="☘-input-wrapper" data-primary>
-        <T tag="select" class="☘-select" style="width:180px">
+        <T tag="select" name="type" class="☘-select" style="width:180px">
             <button>
                 <selectedcontent></selectedcontent>
                 <Icon
@@ -145,10 +145,10 @@ select.☘-select(disabled style="width:120px")
 </T>
 
 ```pug
-.☘-form-item
-    label 故障机型
+label.☘-form-item
+    span 故障机型
     .☘-input-wrapper(data-primary)
-        select.☘-select(style="width:180px")
+        select.☘-select(name="type" style="width:180px")
             button
                 selectedcontent
                 svg(

@@ -15,10 +15,10 @@
     flex-direction column
     gap 0.5em
 
-    ul&
-    menu&
+    &:where(ul)
+    &:where(menu)
         list-style none
-    details&
+    &:where(details)
         margin 0
         &:not([open])
             gap 0
@@ -67,14 +67,14 @@
                     transition transform .3s
                     content ""
 
-                details^[0][open] &
+                ~/:where(details)[open] &
                 &
                     &:before
                         transform rotate(-45deg) translate(2.5px)
                     &:after
                         transform rotate(45deg) translate(-2.5px)
 
-                details^[0]:not([open]) &
+                ~/:where(details):not([open]) &
                 ^[1][data-folded] &
                     margin-top -5px
                     &:before

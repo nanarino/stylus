@@ -140,7 +140,7 @@ button_background_color_init(background_color)
             .{prefix}-input-prefix
                 color rgb(var(--white))
         
-        input[type=file].{prefix}-input^[0]
+        .{prefix}-input:where(input[type=file])^[0]
             font-size 0
             max-height @line-height
             uploader-button()

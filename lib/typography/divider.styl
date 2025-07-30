@@ -1,13 +1,13 @@
 .{prefix}-divider
-    hr&
+    &:where(hr)
         border-color rgb(var(--gray-2) \/ 0.4)
-    div&
+    &:where(div)
         padding-top 2em
         margin-bottom 2em
         overflow hidden
         --box-shadow-color var(--gray-6)
         box-shadow var(--box-shadow-divider-bottom)
-    span&
+    &:where(span)
         display inline-block
         vertical-align middle
         height 1em

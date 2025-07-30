@@ -24,8 +24,6 @@ span.☘-checkbox(style="--indent-checkbox: 2em; line-height: 2")
     label.☘-checkbox-label(for="hello") world
 ```
 
-注意，checkbox**捆绑**了 `<label>` ，你必须携带它，绑定`[for]`时label被点击时也会触发选择或反选
-
 ## `disabled`
 
 <Grid inline>
@@ -141,22 +139,22 @@ style(lang="stylus").
 
 ### hide label
 
-label为空即可不显示
+label为空即可不显示，甚至李代桃僵
 
-<T class="☘-form-item">
-    <label>是否完成</label>
+<T tag="label" class="☘-form-item">
+    <span>是否完成</span>
     <T class="☘-input-wrapper" data-primary>
-        <Checkbox name="饿死了" dataset={{ indeterminate : true }}/>
+        <Checkbox dataset={{ indeterminate : true }}/>
     </T>
 </T>
 
 ```pug
-.☘-form-item
-    label 查找历史订单
+label.☘-form-item
+    span 是否完成
     .☘-input-wrapper
         span.☘-checkbox(data-indeterminate)
-            input.☘-input(type="checkbox" title="饿死了")
-            label.☘-checkbox-label
+            input.☘-input(type="checkbox")
+            span.☘-checkbox-label
 ```
 
 如果你只是需要label无法点击，只有单选框能被点击，可以不传入 `[for]`

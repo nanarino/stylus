@@ -5,7 +5,7 @@ tag()
     border-radius var(--border-radius-md)
     // vertical-align middle
 
-code.{prefix}-code
+.{prefix}-code:where(code)
 
     // --color-code var(--primary-9)
     // --background-color-code var(--primary-1)
@@ -16,7 +16,7 @@ code.{prefix}-code
 
 
 .{prefix}-tag
-kbd.{prefix}-kbd
+.{prefix}-kbd:where(kbd)
 
     // --color-tag var(--primary-6)
     // --background-color-tag var(--primary-1)
@@ -27,6 +27,6 @@ kbd.{prefix}-kbd
     background-color rgb(var(--background-color-tag, var(--primary-1)))
     tag()
 
-    /kbd.{prefix}-kbd
+    /.{prefix}-kbd:where(kbd)
         border-bottom-style solid
         padding var(--font-offset-parent) calc(var(--font-offset-parent) * 2)

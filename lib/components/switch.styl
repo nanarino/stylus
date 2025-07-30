@@ -57,7 +57,7 @@
         inset 0
         border-radius @border-radius
     &-mover
-    input.{prefix}-input[type=checkbox]
+    .{prefix}-input:where(input[type=checkbox])
         cursor pointer
         position absolute
         display flex
@@ -70,7 +70,7 @@
         width var(--size-switch-mover)
         height @width
         transition all .5s
-    input.{prefix}-input[type=checkbox]
+    .{prefix}-input:where(input[type=checkbox])
         opacity 0
         z-index 2
         ~/[data-wider-trigger] ^[-1..-1]

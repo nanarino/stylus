@@ -21,13 +21,10 @@ span.☘-switch
     span.☘-switch-slot
 ```
 
-注意，switch**不捆绑**`<label>` 标签，但是需要跟随：
-
 - `.☘-switch-mover` 动子
 - `.☘-switch-slot` 滑槽
 
-事实上，它们其中之一可以被换成 `<label>`，滑槽被换掉能让你点击整个开关的时候也触发切换
-
+事实上，它们其中之一可以被换成 `<label for="id">` 或者整个套上 `<label>`，这取决于你想点击那一部分纔能切换开关状态，默认是动子
 
 ## `.sm`
 
@@ -68,7 +65,7 @@ span.☘-switch.sm
 
 ## `data-wider-trigger`
 
-默认情况下**点击动子才能切换**开关。如果你不想借助 `label.☘-switch-slot[for=#id]`，
+默认情况下**点击动子才能切换**开关。如果你不想借助 `label[for]`，
 
 可以添加 `[data-wider-trigger]` 属性，届时点击开关整体时也可以被切换，达到一样的效果。
 
@@ -109,8 +106,8 @@ span.☘-switch(data-wider-trigger)
 描述中的占点主题色就会被 `[data-primary]` 影响
 
 
-<T class="☘-form-item">
-    <label>空调</label>
+<T tag="label" class="☘-form-item">
+    <span>空调</span>
     <T class="☘-input-wrapper">
         <Switch title="fire" dataset={{ primary : "danger" }} style={{
             "--box-shadow-width-switch": "16px",
@@ -124,8 +121,8 @@ span.☘-switch(data-wider-trigger)
 
 
 ```pug
-.☘-form-item
-    label 空调
+label.☘-form-item
+    span 空调
     .☘-input-wrapper
         span.☘-switch(data-primary="danger" style={
             "--box-shadow-width-switch": "16px",

@@ -79,14 +79,14 @@ outline 2px solid transparent // 覆盖暗黑模式情况下白色优先
 直接使用局部变量 `--color-input*-wrapper` 也可以设置主题以及焦点时颜色RGB值，优先级低于 `--color-input`。 其中的星号 `*` 意味着这是一个广义的 `input`，也能作用于 `select`、`textarea`
 
 <Grid inline>
-    <T class="☘-form-item">
-        <label>单号</label>
+    <T tag="label" class="☘-form-item">
+        <span>单号</span>
         <T class="☘-input-wrapper" data-primary>
             <T tag="input" class="☘-input" title="单号" value='114514'/>
         </T>
     </T>
-    <T class="☘-form-item">
-        <label>流水号</label>
+    <T tag="label" class="☘-form-item">
+        <span>流水号</span>
         <T class="☘-input-wrapper">
             <T tag="input" class="☘-input" title="流水号" value='1919810'
                 style="--color-input: var(--yellow-5)"
@@ -96,12 +96,12 @@ outline 2px solid transparent // 覆盖暗黑模式情况下白色优先
 </Grid>
 
 ```pug
-.☘-form-item
-    label 单号
+label.☘-form-item
+    span 单号
     .☘-input-wrapper(data-primary)
         input.☘-input(title='单号' value='114514')
-.☘-form-item
-    label 流水号
+label.☘-form-item
+    span 流水号
     .☘-input-wrapper
         input.☘-input(title='流水号' value='1919810' style={
             '--color-input': 'var(--yellow-5)'
@@ -116,7 +116,7 @@ outline 2px solid transparent // 覆盖暗黑模式情况下白色优先
 
 ## `form-item`
 
-- `.☘-form-item` 可以用来给表单项布局
+- `.☘-form-item` / `label.☘-form-item` 可以用来给表单项布局
 - `.☘-form-item[data-inline]` 可以行内布局
 - `.☘-form-item-message` 可以显示提示消息
 - `.☘-input-wrapper[data-validate]` 开启表单校验 （覆盖 `[data-primary]` 主題色为 `danger`）
@@ -126,7 +126,7 @@ outline 2px solid transparent // 覆盖暗黑模式情况下白色优先
 ```pug
 form#formitems-kanban(onsubmit=function(){console.log(this.elements);return false})
     .☘-form-item
-        label 卡号
+        label(for="keywords") 卡号
         .☘-input-wrapper(data-validate)
             input#keywords.☘-input(
                 name="keywords"
@@ -137,7 +137,7 @@ form#formitems-kanban(onsubmit=function(){console.log(this.elements);return fals
             )
             span.☘-form-item-message(data-primary="danger") 卡号必填
     .☘-form-item
-        label 类型
+        span 类型
         .☘-input-wrapper(data-validate)
             each item in [
                 { label: "银联", value: "UnionPay" },

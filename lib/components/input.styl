@@ -31,7 +31,7 @@ input_stat(tag)
         line-height var(--line-height-body)
 
 
-textarea.{prefix}-textarea
+.{prefix}-textarea:where(textarea)
 
     // --padding-textarea 5px 12px
     
@@ -54,27 +54,27 @@ textarea.{prefix}-textarea
         --color-textarea var(--primary-6)
 
 
-input.{prefix}-input
+.{prefix}-input
 
     // --padding-vertical-input 4px
     // --padding-horizonal-input 12px
     
     --color-input var(_get_var_by("color-input\*", wrapper), var(--outline-color-focus))
 
-    &:not([type])
-    &[type=text]
-    &[type=search]
-    &[type=number]
-    &[type=password]
-    &[type=email]
-    &[type=tel]
-    &[type=url]
-    &[type=date]
-    &[type=time]
-    &[type=month]
-    &[type=week]
-    &[type=datetime-local]
-    &[type=datetime]
+    &:where(input:not([type]))
+    &:where(input[type=text])
+    &:where(input[type=search])
+    &:where(input[type=number])
+    &:where(input[type=password])
+    &:where(input[type=email])
+    &:where(input[type=tel])
+    &:where(input[type=url])
+    &:where(input[type=date])
+    &:where(input[type=time])
+    &:where(input[type=month])
+    &:where(input[type=week])
+    &:where(input[type=datetime-local])
+    &:where(input[type=datetime])
         flex 1
         padding var(--padding-vertical-input, 4px) var(--padding-horizonal-input, 12px)
 
@@ -115,9 +115,9 @@ input.{prefix}-input
      * 输入框前缀后缀的按钮
      */
     buttons = button,
-        'input:where([type=button])',
-        'input:where([type=reset])',
-        'input:where([type=submit])'
+        '[type=button]',
+        '[type=reset]',
+        '[type=submit]'
 
     &:where([data-primary])
     &:where([data-validate])

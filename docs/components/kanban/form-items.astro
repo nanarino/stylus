@@ -11,7 +11,7 @@ const card_type = [
 
 <form id="formitems-kanban" onsubmit="console.log(this.elements);return false">
     <T class="☘-form-item">
-        <label>卡号</label>
+        <label for="keywords">卡号</label>
         <T class="☘-input-wrapper" data-validate>
             <T
                 tag="input"
@@ -28,7 +28,7 @@ const card_type = [
         </T>
     </T>
     <T class="☘-form-item">
-        <label>类型</label>
+        <span>类型</span>
         <T class="☘-input-wrapper" data-validate>
             {
                 card_type.map(i => (
