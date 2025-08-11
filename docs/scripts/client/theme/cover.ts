@@ -25,6 +25,5 @@ redraw()
 // 路由切換
 document.addEventListener("astro:after-swap", () => redraw())
 // 响应主题
-window.addEventListener(`${prefix}-theme`, (event: CustomEvent<Theme>) =>
-    redraw(style[event.detail])
-)
+window.addEventListener(`${prefix}-theme`, ((event: CustomEvent<Theme>) =>
+    redraw(style[event.detail])) as (e: Event) => void)

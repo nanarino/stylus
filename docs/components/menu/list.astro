@@ -8,9 +8,11 @@ interface Props {
     base?: string
     deep?: number
 }
-const { menu } = Astro.props
 const base = Astro.props.base ?? ""
-const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0]
+const items = Astro.props.menu.map(i => ({
+    ...i,
+    name: i.path.match?.(/[^/]*$/)?.[0],
+}))
 const deep = Astro.props.deep ?? 0
 const watermark = [
     `url("data:image/svg+xml;utf8,${encodeURIComponent(clover0.replace(/currentColor/g, "#846"))}") 0 0 / 36px 36px`,
@@ -25,7 +27,7 @@ const watermark = [
     }}
 >
     {
-        menu.map(item => {
+        items.map(item => {
             /**
              * 当前菜单
              */
@@ -50,7 +52,7 @@ const watermark = [
                             class={`${prefix}-menu-submenu-title`}
                             onclick="this.parentElement.toggleAttribute('data-folded')"
                         >
-                            <span>{getName(item.path)}</span>
+                            <span>{item.name}</span>
                             <i class={`${prefix}-menu-submenu-title-arrow`} />
                         </div>
                         <Astro.self
@@ -70,10 +72,10 @@ const watermark = [
                         class={`${prefix}-menu-item ${prefix}-watermark`}
                         data-active
                         style={{
-                            order: getName(item.path) ? 1 : 0,
+                            order: item.name ? 1 : 0,
                         }}
                     >
-                        {getName(item.path) || "readme"}
+                        {item.name || "readme"}
                     </li>
                 )
             }
@@ -83,13 +85,13 @@ const watermark = [
             return (
                 <li
                     class={`${prefix}-menu-item`}
-                    style={{ order: getName(item.path) ? 1 : 0 }}
+                    style={{ order: item.name ? 1 : 0 }}
                 >
                     <a
                         class={`${prefix}-menu-item-link`}
                         href={base + item.path}
                     >
-                        {getName(item.path) || "readme"}
+                        {item.name || "readme"}
                     </a>
                 </li>
             )

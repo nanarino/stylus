@@ -17,7 +17,7 @@ document.addEventListener("astro:page-load", () => {
             })
         )
     }
-    delete checkbox.parentElement.dataset.init
+    delete checkbox.parentElement!.dataset.init
 })
 
 document.addEventListener("astro:after-swap", () => {

@@ -32,16 +32,16 @@ if (!props.id) {
     <input
         type="radio"
         class={`${prefix}-input`}
-        id={props.id ?? uuid}
+        id={props.id ?? uuid!}
         name={props.name ?? ""}
-        value={props.value ?? props.id ?? uuid}
+        value={props.value ?? props.id ?? uuid!}
         title={props.title ?? props.value ?? props.id ?? props.name ?? ""}
         checked={props.checked}
         disabled={props.disabled}
         onchange={props.onchange}
         required={props.required}
     />
-    <label class={`${prefix}-radio-label`} for={props.id ?? uuid}
+    <label class={`${prefix}-radio-label`} for={props.id ?? uuid!}
         ><slot /></label
     >
 </span>

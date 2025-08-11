@@ -32,8 +32,8 @@ const hasLabel = Astro.slots.has("default")
     <input
         type="checkbox"
         class={`${prefix}-input`}
-        id={props.id || uuid}
-        name={props.name || props.id || uuid}
+        id={props.id || uuid!}
+        name={props.name || props.id || uuid!}
         title={props.title || props.name || ""}
         checked={props.checked}
         disabled={props.disabled}
@@ -41,7 +41,7 @@ const hasLabel = Astro.slots.has("default")
     />
     {
         hasLabel ? (
-            <label class={`${prefix}-checkbox-label`} for={props.id || uuid}><slot /></label>
+            <label class={`${prefix}-checkbox-label`} for={props.id || uuid!}><slot /></label>
         ): (
             <span class={`${prefix}-checkbox-label`}></span>
         )

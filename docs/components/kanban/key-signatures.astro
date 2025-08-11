@@ -53,14 +53,16 @@ const MODES = {
                         {offset == -1 ? "sharp" : ""}
                         {offset < -1 ? "flats" : ""}
                     </T>
-                    {Reflect.ownKeys(MODES).map(mode => (
-                        <T class="☘-table-cell">
-                            <T tag="code" class="☘-code ☘-font-mono">
-                                {MODES[mode].offset(offset)}
-                                {mode}
+                    {(Reflect.ownKeys(MODES) as (keyof typeof MODES)[]).map(
+                        mode => (
+                            <T class="☘-table-cell">
+                                <T tag="code" class="☘-code ☘-font-mono">
+                                    {MODES[mode].offset(offset)}
+                                    {mode}
+                                </T>
                             </T>
-                        </T>
-                    ))}
+                        )
+                    )}
                 </T>
             ))
         }

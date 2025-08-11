@@ -31,8 +31,8 @@ if (!props.id) {
     <input
         type="file"
         accept={accept.toString()}
-        id={props.id || uuid}
-        name={props.name || props.id || uuid}
+        id={props.id || uuid!}
+        name={props.name || props.id || uuid!}
         title={props.title || props.name || ""}
         class={`${prefix}-input`}
         disabled={props.disabled}
@@ -41,7 +41,7 @@ if (!props.id) {
 </span>
 {
     props.disabled ? (<></>) : (
-        <script define:vars={{ id: props.id || uuid, accept }}>
+        <script define:vars={{ id: props.id || uuid!, accept }}>
             document.getElementById(id).onchange = function(e){
                 const file = e.target.files[0]
                 if (accept.some((t) => new RegExp(t).test(file.type))) {
