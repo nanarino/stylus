@@ -47,7 +47,7 @@ button_background_color_init(background_color)
     display inline-flex
     justify-content center
     align-items center
-    padding var(--padding-vertical-button, 5px) var(--padding-horizonal-button, 12px)
+    padding var(--padding-vertical-button, 5px) var(--padding-horizontal-button, 12px)
     font-size var(--font-size-body)
     height fit-content
     line-height var(--line-height-body)
@@ -93,7 +93,7 @@ button_background_color_init(background_color)
     &.sm
         // --padding-button 1px 8px
         --padding-vertical-button 1px
-        --padding-horizonal-button 8px
+        --padding-horizontal-button 8px
         --font-size-body var(--font-size-base)
         --line-height-body var(--line-height-base)
         border-radius var(--border-radius-sm)
@@ -101,7 +101,7 @@ button_background_color_init(background_color)
     &.lg
         // --padding-button 8px 16px
         --padding-vertical-button 8px
-        --padding-horizonal-button 16px
+        --padding-horizontal-button 16px
         --font-size-body var(--font-size-h5)
         --line-height-body var(--line-height-h5)
     
@@ -109,7 +109,7 @@ button_background_color_init(background_color)
     &:where([data-square])
         aspect-ratio 1 / 1
         overflow hidden
-        --padding-vertical-button var(--padding-horizonal-button, 12px)
+        --padding-vertical-button var(--padding-horizontal-button, 12px)
     &:where([data-round])
         border-radius 50%
     &:where([data-square])
@@ -162,7 +162,7 @@ button_background_color_init(background_color)
                 uploader-button()
             
             ^[1]:has(.{prefix}-input-prefix) & // & 這裏相當於 ^[-2..-1]
-                padding-left calc(var(--padding-horizonal-button, 12px) + 1.5 * var(--font-size-body))
+                padding-left calc(var(--padding-horizontal-button, 12px) + 1.5 * var(--font-size-body))
             
             
             &+label

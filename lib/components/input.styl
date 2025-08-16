@@ -57,7 +57,7 @@ input_stat(tag)
 .{prefix}-input
 
     // --padding-vertical-input 4px
-    // --padding-horizonal-input 12px
+    // --padding-horizontal-input 12px
     
     --color-input var(_get_var_by("color-input\*", wrapper), var(--outline-color-focus))
 
@@ -76,7 +76,7 @@ input_stat(tag)
     &:where(input[type=datetime-local])
     &:where(input[type=datetime])
         flex 1
-        padding var(--padding-vertical-input, 4px) var(--padding-horizonal-input, 12px)
+        padding var(--padding-vertical-input, 4px) var(--padding-horizontal-input, 12px)
 
         &.sm
             --padding-vertical-input 0
@@ -96,10 +96,10 @@ input_stat(tag)
                 background-color rgb(var(--gray-2))
             &:has(.{prefix}-input-prefix)
                 & ^[0..1]
-                    padding-left calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
+                    padding-left calc(var(--padding-horizontal-input, 12px) + var(--font-size-body))
             &:has(.{prefix}-input-suffix)
                 & ^[0..1]
-                    padding-right calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
+                    padding-right calc(var(--padding-horizontal-input, 12px) + var(--font-size-body))
 
 
 .{prefix}-input-wrapper
@@ -178,6 +178,6 @@ input_stat(tag)
         //     cursor not-allowed
 
     .{prefix}-input-prefix
-        left calc(var(--padding-horizonal-input, 12px) / 2)
+        left calc(var(--padding-horizontal-input, 12px) / 2)
     .{prefix}-input-suffix
-        right calc(var(--padding-horizonal-input, 12px) / 2)
+        right calc(var(--padding-horizontal-input, 12px) / 2)
