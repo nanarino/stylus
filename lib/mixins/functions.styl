@@ -31,12 +31,15 @@ path(path_str)
 /**
  * 获取拼接的css变量
  *
- * name: str
- * level: int
+ * name: str | var
+ * level: int | var
  * return: str
  */
-_get_var_by(property, level)
-    '--%s-%s'%(unquote(property) level)
+_get_var_by(property, level = none)
+    if  level == none
+        '--%s'%(unquote(property))
+    else
+        '--%s-%s'%(unquote(property) level)
 
 /**
  * 多行省略混入

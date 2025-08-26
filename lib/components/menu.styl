@@ -1,11 +1,11 @@
 .{prefix}-menu
     // --color-menu var(--primary-6)
     // --color-menu-item var(--black)
-    // --color-menu-item-hover var(--color-menu, var(--primary-6))
-    // --color-menu-item-active var(--white)
+    // --color-menu-item:hover var(--color-menu, var(--primary-6))
+    // --color-menu-item:active var(--white)
     // --background-color-menu-item "from transparent r g b / alpha"
-    // --background-color-menu-item-hover "from transparent r g b / alpha"
-    // --background-color-menu-item-active var(--color-menu, var(--primary-6))
+    // --background-color-menu-item:hover "from transparent r g b / alpha"
+    // --background-color-menu-item:active var(--color-menu, var(--primary-6))
     // --padding-vertical-menu-item 0.5em
     // --padding-horizontal-menu-item 1em
 
@@ -106,12 +106,12 @@
         &:where([data-active])
         &:where([data-selected])
             cursor auto
-            background-color rgb(var(--background-color-menu-item-active, var(--color-menu, var(--primary-6))))
-            color  rgb(var(--color-menu-item-active, var(--white)))
+            background-color rgb(var(_get_var_by("background-color-menu-item\:active"), var(--color-menu, var(--primary-6))))
+            color  rgb(var(_get_var_by("color-menu-item\:active"), var(--white)))
         
         &:not(^[0]-item[data-active]):not(^[0]-item[data-selected]):hover
-            background-color rgb(var(--background-color-menu-item-hover, from transparent r g b \/ alpha))
-            color rgb(var(--color-menu-item-hover, var(--color-menu, var(--primary-6))))
+            background-color rgb(var(_get_var_by("background-color-menu-item\:hover"), from transparent r g b \/ alpha))
+            color rgb(var(_get_var_by("color-menu-item\:hover"), var(--color-menu, var(--primary-6))))
         
         ~/-submenu:where([data-folded]) ^[0]
             /**

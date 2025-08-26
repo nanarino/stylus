@@ -1,6 +1,9 @@
 gray-cell()
     color rgb(var(--gray-9))
     background-color rgb(var(--gray-1))
+row-hover-cell()
+    color rgb(var(_get_var_by("color-cell-row\:hover"), var(--gray-9)))
+    background-color rgb(var(_get_var_by("background-color-cell-row\:hover"), var(--gray-1)))
 
 
 .{prefix}-table-wrapper
@@ -44,7 +47,7 @@ gray-cell()
             display table-row
             box-sizing border-box
             &:hover>*
-                gray-cell()
+                row-hover-cell()
         td, th, &-cell
             display table-cell
             box-sizing border-box

@@ -96,12 +96,12 @@ span.☘-switch(data-wider-trigger)
 与颜色有关的全局变量RGB值有：
 
 - `--color-switch` 关闭时颜色
-- `--color-switch-checked` 开启时主题颜色
-- `--color-switch-disabled` 禁用状态颜色
-- `--color-switch-checked-disabled` 禁用状态开启时主题颜色
+- `--color-switch:checked` 开启时主题颜色
+- `--color-switch:disabled` 禁用状态颜色
+- `--color-switch:checked:disabled` 禁用状态开启时主题颜色
 - `--color-switch-mover` 动子颜色
 - `--box-shadow-color-switch` 阴影主题颜色
-- `--box-shadow-color-switch-checked` 开启时阴影颜色
+- `--box-shadow-color-switch:checked` 开启时阴影颜色
 
 描述中的占点主题色就会被 `[data-primary]` 影响
 
@@ -111,7 +111,7 @@ span.☘-switch(data-wider-trigger)
     <T class="☘-input-wrapper">
         <Switch title="fire" dataset={{ primary : "danger" }} style={{
             "--box-shadow-width-switch": "16px",
-            "--box-shadow-color-switch-checked": "var(--blue-5)"
+            "--box-shadow-color-switch\:checked": "var(--blue-5)"
         }}>
             <T class="☘-switch-mover">🔥</T>
             <T class="☘-switch-slot"/>
@@ -126,7 +126,7 @@ label.☘-form-item
     .☘-input-wrapper
         span.☘-switch(data-primary="danger" style={
             "--box-shadow-width-switch": "16px",
-            "--box-shadow-color-switch-checked": "var(--blue-5)"
+            "--box-shadow-color-switch:checked": "var(--blue-5)"
         })
             input.☘-input(type="checkbox" title="fire")
             div.☘-switch-mover 🔥
@@ -145,8 +145,8 @@ span.☘-switch.oxalis-switch(
     style={
         ["--size-switch"]: "48px",
         ["--padding-switch"]: "4px",
-        ["--color-switch-checked"]: "var(--lime-6)",
-        ["--color-switch-checked-disabled"]: "var(--lime-3)",
+        ["--color-switch:checked"]: "var(--lime-6)",
+        ["--color-switch:checked:disabled"]: "var(--lime-3)",
         ["--color-switch"]: "var(--gold-3)",
     }
 )

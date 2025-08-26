@@ -8,21 +8,21 @@
     // --box-shadow-width-switch var(--padding-switch)
     box-shadow-width-switch = var(--box-shadow-width-switch, var(--padding-switch, 2px))
     // --color-switch var(--gray-4)
-    // --color-switch-checked var(--primary-6)
-    // --color-switch-disabled var(--gray-1)
-    // --color-switch-checked-disabled var(--primary-3)
+    // --color-switch:checked var(--primary-6)
+    // --color-switch:disabled var(--gray-1)
+    // --color-switch:checked:disabled var(--primary-3)
     // --color-switch-mover var(--gray-2)
-    // --box-shadow-color-switch var(--color-switch-checked)
-    // --box-shadow-color-switch-checked var(--color-switch)
+    // --box-shadow-color-switch var(--color-switch:checked)
+    // --box-shadow-color-switch:checked var(--color-switch)
     box-shadow-color-switch = var(
         --box-shadow-color-switch, var(
-            --color-switch-checked, var(
+            _get_var_by("color-switch\:checked"), var(
                 --primary-6
             )
         )
     )
     box-shadow-color-switch-checked = var(
-        --box-shadow-color-switch-checked, var(
+        _get_var_by("box-shadow-color-switch\:checked"), var(
             --color-switch, var(
                 --gray-4
             )
@@ -79,21 +79,21 @@
             height @height
 
         ^[-1..-1]:focus-visible~^[0]-mover
-            outline 2px solid rgb(var(_get_var_by("color-input\*", wrapper), var(--outline-color-focus)))
+            outline 2px solid rgb(var(_get_var_by("color-input\*", wrapper), var(_get_var_by("outline-color-\*\:focus"))))
         
         &:disabled
         ^[-1..-1]:disabled~^[0]-mover
             cursor not-allowed
         ^[-1..-1]:disabled~^[0]-slot
-            background-color rgb(var(--color-switch-disabled, var(--gray-1)))
+            background-color rgb(var(_get_var_by("color-switch\:disabled"), var(--gray-1)))
         ^[-1..-1]:checked:disabled~^[0]-slot
-            background-color rgb(var(--color-switch-checked-disabled, var(--primary-3)))
+            background-color rgb(var(_get_var_by("color-switch\:checked\:disabled"), var(--primary-3)))
         
         &:checked
         ^[-1..-1]:checked~^[0]-mover
             left calc(var(--size-switch, 22px) + var(--padding-switch, 2px))
         ^[-1..-1]:checked~^[0]-slot
-            background-color rgb(var(--color-switch-checked, var(--primary-6)))
+            background-color rgb(var(_get_var_by("color-switch\:checked"), var(--primary-6)))
 
         &:not(:disabled):hover~^[0]-mover
         ^[-1..-1]:not(:disabled)~^[0]-mover:hover

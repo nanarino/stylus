@@ -2,7 +2,7 @@
  * @init 初始背景色
  * @transparent 透过的按钮当前颜色
  *
- * 当 变量 --percent-button-wave 从 0% -> 100% 时 按钮当前颜色从中心扩散
+ * 当 变量 --percent-button-ripple 从 0% -> 100% 时 按钮当前颜色从中心扩散
  * 一般来说 按钮当前颜色要比初始背景色要深
  *
  */
@@ -10,8 +10,8 @@ button_background_color_init(background_color)
     background-color background_color
     background-image radial-gradient(circle, 
         transparent 0%,
-        transparent var(--percent-button-wave),
-        background_color var(--percent-button-wave), 
+        transparent var(--percent-button-ripple),
+        background_color var(--percent-button-ripple), 
         background_color 100%
     )
 
@@ -19,17 +19,17 @@ button_background_color_init(background_color)
 .{prefix}-button
     /:root
         // --padding--button 5px 12px
-        @property --percent-button-wave
+        @property --percent-button-ripple
             syntax '<percentage>'
             inherits false
             initial-value 100%
             
 
     --color-button var(--white)
-    --color-button-disabled var(--white)
+    {_get_var_by("color-button\:disabled")} var(--white)
     --background-color-button var(--primary-5)
-    --background-color-button-focus var(--primary-6)
-    --background-color-button-disabled var(--primary-2)
+    {_get_var_by("background-color-button\:focus")} var(--primary-6)
+    {_get_var_by("background-color-button\:disabled")} var(--primary-2)
 
     /**
      * 不使用主题
@@ -37,10 +37,10 @@ button_background_color_init(background_color)
     &:where(:not([data-primary]))
         // color unset // 在Safari中是蓝色？
         --color-button var(--gray-10)
-        --color-button-disabled var(--gray-5)
+        {_get_var_by("color-button\:disabled")} var(--gray-5)
         --background-color-button var(--gray-2)
-        --background-color-button-focus var(--gray-3)
-        --background-color-button-disabled var(--gray-1)
+        {_get_var_by("background-color-button\:focus")} var(--gray-3)
+        {_get_var_by("background-color-button\:disabled")} var(--gray-1)
     
     cursor pointer
     user-select none
@@ -58,36 +58,36 @@ button_background_color_init(background_color)
     border-radius var(--border-radius-md)
 
 
-    transition --percent-button-wave .5s, box-shadow .3s
+    transition --percent-button-ripple .5s, box-shadow .3s
     transition-timing-function ease-in
 
     button_background_color_init rgb(var(--background-color-button))
     
 
     &:focus-visible
-        outline-color rgb(var(--outline-color-focus))
+        outline-color rgb(var(_get_var_by("outline-color-\*\:focus")))
     
     &:not([disabled]):hover
         box-shadow var(--box-shadow-drop-bottom)
     
     &[disabled]
         cursor not-allowed
-        color rgb(var(--color-button-disabled))
+        color rgb(var(_get_var_by("color-button\:disabled")))
         &::-ms-browse
-            color rgb(var(--color-button-disabled))
+            color rgb(var(_get_var_by("color-button\:disabled")))
         &::-webkit-file-upload-button
-            color rgb(var(--color-button-disabled))
+            color rgb(var(_get_var_by("color-button\:disabled")))
         &::file-selector-button
-            color rgb(var(--color-button-disabled))
-        background-color rgb(var(--background-color-button-disabled))
+            color rgb(var(_get_var_by("color-button\:disabled")))
+        background-color rgb(var(_get_var_by("background-color-button\:disabled")))
     
     &:not([disabled]):focus
-        background-color rgb(var(--background-color-button-focus))
+        background-color rgb(var(_get_var_by("background-color-button\:focus")))
     
     &:not([disabled]):active
-        --percent-button-wave 0%
+        --percent-button-ripple 0%
         transition none
-        background-color rgb(var(--background-color-button-focus))
+        background-color rgb(var(_get_var_by("background-color-button\:focus")))
 
 
     &.sm

@@ -35,7 +35,7 @@ input_stat(tag)
 
     // --padding-textarea 5px 12px
     
-    --color-textarea var(_get_var_by("color-input\*", wrapper), var(--outline-color-focus))
+    --color-textarea var(_get_var_by("color-input\*", wrapper), var(_get_var_by("outline-color-\*\:focus")))
 
     display inline-flex
     flex-direction column
@@ -59,7 +59,7 @@ input_stat(tag)
     // --padding-vertical-input 4px
     // --padding-horizontal-input 12px
     
-    --color-input var(_get_var_by("color-input\*", wrapper), var(--outline-color-focus))
+    --color-input var(_get_var_by("color-input\*", wrapper), var(_get_var_by("outline-color-\*\:focus")))
 
     &:where(input:not([type]))
     &:where(input[type=text])

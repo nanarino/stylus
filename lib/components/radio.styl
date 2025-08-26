@@ -7,7 +7,7 @@
 
     // --indent-radio 1.4em
     // --color-radio var(--primary-6)
-    // --color-radio-disabled var(--primary-3)
+    // --color-radio:disabled var(--primary-3)
 
     min-height var(--line-height-body)
     position relative
@@ -47,7 +47,7 @@
              * 使用 `^[1..1]` 代替 `../` 减少编译后体积以及选择器冗余
              */
             ^[1..1]:focus-visible+&
-                outline 2px solid rgb(var(_get_var_by("color-input\*", wrapper), var(--outline-color-focus)))
+                outline 2px solid rgb(var(_get_var_by("color-input\*", wrapper), var(_get_var_by("outline-color-\*\:focus"))))
                 border-radius var(--border-radius-sm)
             ^[1..1]:disabled+&
                 color rgb(var(--gray-6))
@@ -71,7 +71,7 @@
                 border-color rgb(var(--color-radio, var(--primary-6)))
                 // background-color @border-color
             ^[1..1]:checked:disabled+&
-                border-color rgb(var(--color-radio-disabled, var(--primary-3)))
+                border-color rgb(var(_get_var_by("color-radio\:disabled"), var(--primary-3)))
                 // background-color @border-color
             ^[1..1]:disabled+&
                 background-color rgb(var(--gray-1))

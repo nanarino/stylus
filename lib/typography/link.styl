@@ -1,9 +1,9 @@
 .{prefix}-link
 
     // --color-link var(--primary-6)
-    // --color-link-hover var(--primary-5)
-    // --color-link-focus var(--primary-7)
-    // --color-link-disabled var(--primary-2)
+    // --color-link:hover var(--primary-5)
+    // --color-link:focus var(--primary-7)
+    // --color-link:disabled var(--primary-2)
     
     display inline-flex
     // vertical-align baseline
@@ -16,16 +16,16 @@
     // text-decoration none
     color rgb(var(--color-link, var(--primary-6)))
     &:hover
-        color rgb(var(--color-link-hover, var(--primary-5)))
+        color rgb(var(_get_var_by("color-link\:hover"), var(--primary-5)))
     &:focus
-        color rgb(var(--color-link-focus, var(--primary-7)))
+        color rgb(var(_get_var_by("color-link\:focus"), var(--primary-7)))
     &[disabled]
     &[aria-disabled]
-        color rgb(var(--color-link-disabled, var(--primary-2)))
+        color rgb(var(_get_var_by("color-link\:disabled"), var(--primary-2)))
         cursor not-allowed
         // pointer-events none
     &:focus-visible
-        outline-color rgb(var(--outline-color-focus))
+        outline-color rgb(var(_get_var_by("outline-color-\*\:focus")))
         border-radius var(--border-radius-sm)
     
     //.{prefix}-code

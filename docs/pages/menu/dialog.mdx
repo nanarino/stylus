@@ -53,6 +53,8 @@ dialog.☘-dialog(open style={
 
 全局变量 `--padding-dialog` 可以设置弹框内边距
 
+本章节无论对话框框，模态框，气泡框，都是原生dialog元素为基础实现的，故而css变量名都同为 `--*-dialog`
+
 
 ## modal
 
@@ -132,10 +134,10 @@ dialog.☘-dialog
         transform: 'translateX(-50%)',
     })
         form(method="dialog" style="width:96px")
-            button.☘-button(data-primary style=`
-                --background-color-button:var(--blue-8);
-                --background-color-button-focus:var(--blue-7);
-            `)
+            button.☘-button(data-primary style={
+                "--background-color-button": "var(--blue-8)",
+                "--background-color-button:focus": "var(--blue-7)",
+            })
                 svg(
                     data-icon='logo/outline/facebook'
                     width=22
@@ -177,10 +179,10 @@ dialog.☘-dialog
     button.☘-button(popovertarget="drop") 連絡先
     dialog#drop(popover="auto")
     .☘-dropdown.sm(style="width:96px")
-        button.☘-button(data-primary style=`
-            --background-color-button:var(--blue-8);
-            --background-color-button-focus:var(--blue-7);
-        `)
+        button.☘-button(data-primary style={
+            "--background-color-button": "var(--blue-8)",
+            "--background-color-button:focus": "var(--blue-7)",
+        })
             svg(
                 data-icon='logo/outline/facebook'
                 width=22

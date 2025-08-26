@@ -98,7 +98,7 @@ span.☘-checkbox(data-marker="-")
 ## custom style
 
 - `--color-checkbox` 全局变量覆盖颜色RGB值
-- `--color-checkbox-disabled` 禁用状态全局变量覆盖颜色RGB值
+- `--color-checkbox:disabled` 禁用状态全局变量覆盖颜色RGB值
 
 marker钩号或破折号由 `label::after` 实现，可以自定义添加你需要的✔图形
 
@@ -108,7 +108,7 @@ marker钩号或破折号由 `label::after` 实现，可以自定义添加你需�
     dataset={{ marker : "*" }}
     style={{
         '--color-checkbox': 'var(--blue-6)',
-        '--color-checkbox-disabled': 'var(--blue-2)',
+        '--color-checkbox\:disabled': 'var(--blue-2)',
         color: 'rgb(var(--blue-6))'
 }}>Tim</Checkbox>
 
@@ -117,7 +117,7 @@ span.☘-checkbox(
     data-marker="*"
     style={
     '--color-checkbox': 'var(--blue-6)',
-    '--color-checkbox-disabled': 'var(--blue-2)',
+    '--color-checkbox:disabled': 'var(--blue-2)',
     color: 'rgb(var(--blue-6))'
 })
     input#BlueTIMBox.☘-input(
