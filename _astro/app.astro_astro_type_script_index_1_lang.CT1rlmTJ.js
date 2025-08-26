@@ -1,1 +1,0 @@
-import{p as m}from"./prefix.DdUm4vFL.js";import{t}from"./chunk-KJPLWE74.SrnMaASN.js";function n(){const e=t.at(t.indexOf(window.theme)-1);e&&(document.documentElement.dataset.theme=e,localStorage.setItem("theme",e))}document.addEventListener("astro:after-swap",()=>{document.documentElement.dataset.theme=window.theme});window.addEventListener(`${m}-theme`,e=>{n()});

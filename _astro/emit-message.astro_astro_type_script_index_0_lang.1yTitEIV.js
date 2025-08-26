@@ -11,7 +11,7 @@ import{p as o}from"./prefix.DdUm4vFL.js";import{d as c}from"./dedent.DVFkJXTl.js
                                     <span>
                                         发射成功
                                     </span>
-                                `,primary:n,style:{"--background-color-message":`var(--${t}-5)`,"--box-shadow-color":`var(--${t}-4)`}}})),t=l[Math.floor(Math.random()*l.length)],e.innerText=t,e.dataset.color=t,e.style.setProperty("--background-color-button",`var(--${t}-5)`),e.style.setProperty("--background-color-button-focus",`var(--${t}-6)`)}else window.dispatchEvent(new CustomEvent(`${o}-message`,{detail:{content:c`
+                                `,primary:n,style:{"--background-color-message":`var(--${t}-5)`,"--box-shadow-color":`var(--${t}-4)`}}})),t=l[Math.floor(Math.random()*l.length)],e.innerText=t,e.dataset.color=t,e.style.setProperty("--background-color-button",`var(--${t}-5)`),e.style.setProperty("--background-color-button:focus",`var(--${t}-6)`)}else window.dispatchEvent(new CustomEvent(`${o}-message`,{detail:{content:c`
                                     <svg 
                                         class="${o}-message-prefix"
                                         data-icon="tips/outline/${a}-circle"

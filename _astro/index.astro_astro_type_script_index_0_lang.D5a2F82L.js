@@ -22,4 +22,4 @@ background: hsla(
     calc(240 - 6 * @x * @y),
     70%, 68%, @r.8
 )
-`,o={light:s,dark:t};function e(n=o[window.theme]){const r=document.querySelector("css-doodle");r&&(r.compiled?r.update(n):r.innerHTML=n)}e();document.addEventListener("astro:after-swap",()=>e());window.addEventListener(`${d}-theme`,n=>e(o[n.detail]));
+`,o={light:s,dark:t};function e(n=o[window.theme]){const r=document.querySelector("css-doodle");r&&(r.compiled?r.update(n):r.innerHTML=n)}e();document.addEventListener("astro:after-swap",()=>e());window.addEventListener(`${d}-theme`,(n=>e(o[n.detail])));
