@@ -1,6 +1,6 @@
-import prefix from "docs/scripts/prefix"
 import colours from "./colors"
 import dedent from "dedent"
+import { icon } from "docs/scripts/client/message"
 
 const icons = ["check", "close", "exclamation", "info"] as const
 
@@ -12,37 +12,24 @@ document.addEventListener("astro:page-load", () => {
             const button = e.target as HTMLButtonElement
             if (button.tagName === "BUTTON") {
                 const primary = Object.hasOwn(button.dataset, "primary")
-                const icon = icons[Math.floor(Math.random() * icons.length)]
+                const i = icons[Math.floor(Math.random() * icons.length)]
                 if (primary) {
                     // 取上一次的颜色
                     let color =
                         Reflect.get(button.dataset, "color") || "primary"
-                    window.dispatchEvent(
-                        new CustomEvent(`${prefix}-message`, {
-                            detail: {
-                                content: dedent`
-                                    <svg 
-                                        class="${prefix}-message-prefix"
-                                        data-icon="tips/fill/${icon}-circle-fill"
-                                        viewBox="0 0 48 48"
-                                    >
-                                        <use
-                                            xlink:href="#ai:local:tips/fill/${icon}-circle-fill"
-                                        ></use>
-                                    </svg>
-                                    <span>
-                                        发射成功
-                                    </span>
-                                `,
-                                primary,
-                                // duration: 100000,
-                                style: {
-                                    "--background-color-message": `var(--${color}-5)`,
-                                    "--box-shadow-color": `var(--${color}-4)`,
-                                },
-                            },
-                        })
-                    )
+                    window.message.emit({
+                        content: dedent`
+                            ${icon(primary, i)}
+                            <span>
+                                发射成功
+                            </span>
+                        `,
+                        primary: "primary",
+                        style: {
+                            "--background-color-message": `var(--${color}-5)`,
+                            "--box-shadow-color": `var(--${color}-4)`,
+                        },
+                    })
                     // 设置下一次的颜色
                     color = colours[Math.floor(Math.random() * colours.length)]
                     button.innerText = color
@@ -52,40 +39,11 @@ document.addEventListener("astro:page-load", () => {
                         `var(--${color}-5)`
                     )
                     button.style.setProperty(
-                        "--background-color-button\:focus",
+                        "--background-color-button:focus",
                         `var(--${color}-6)`
                     )
                 } else {
-                    window.dispatchEvent(
-                        new CustomEvent(`${prefix}-message`, {
-                            detail: {
-                                content: dedent`
-                                    <svg 
-                                        class="${prefix}-message-prefix"
-                                        data-icon="tips/outline/${icon}-circle"
-                                        data-primary="${
-                                            {
-                                                check: "success",
-                                                close: "danger",
-                                                exclamation: "warning",
-                                                info: "",
-                                            }[icon]
-                                        }"
-                                        viewBox="0 0 48 48"
-                                    >
-                                        <use
-                                            xlink:href="#ai:local:tips/outline/${icon}-circle"
-                                        ></use>
-                                    </svg>
-                                    <span>
-                                        发射成功
-                                    </span>
-                                `,
-                                primary,
-                                // duration: 100000,
-                            },
-                        })
-                    )
+                    window.message.info("发射成功", i)
                 }
             }
         }

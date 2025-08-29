@@ -15,7 +15,7 @@ export {components};
 
 - `.☘-font-serif` 衬线字体
 - `.☘-font-mono` 等宽字体
-- `.☘-connot-select` 无法选中文字
+- `.☘-cannot-select` 无法选中文字
 
 和颜色一样，字体大小和行高有10个级别。
 
@@ -35,7 +35,20 @@ export {components};
 以下是全局变量
 
 - `--font-family-base` 设置全局默认字体  
-  但是你不能只设置全局默认字体（其设置后也会作为衬线和等宽的默认字体）
+  但是你不能只设置全局默认字体（其设置后也会作为衬线和等宽的默认字体）    
+  当前：
+  ```pug
+  link(
+      rel="stylesheet"
+      href=HYWenHei
+      onload="document.documentElement.style.setProperty('--font-family-base', 'HYWenHei-85W-zh')"
+  )
+  link(
+      rel="stylesheet"
+      href=jetbrainsMono
+      onload="document.documentElement.style.setProperty('--font-family-mono', 'JetBrains Mono')"
+  )
+  ```
 - `--font-family-serif` 设置衬线默认字体
 - `--font-family-mono` 设置等宽默认字体
 - `--line-height-body` 行高（部分组件有覆写）

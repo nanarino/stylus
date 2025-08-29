@@ -42,28 +42,24 @@ span.☘-badge(data-processing style="font-size: 16px") processing
 - 全局变量 `--color-badge` 可以自定义圆点和波纹颜色RGB值
 - 全局变量 `--weight-badge-processing` 调整 波浪大小
 - 全局变量 `--indent-badge` 调整文字左内边距    
-    这原本是用 `text-indent` 属性实现，但是在Safari中使用 `::before` 的元素不支持 `text-indent`。如果使用 `text-indent` 效果见下：
+    这原本是用 `text-indent` 属性实现，但是在Safari中使用 `::before` 的元素不支持 `text-indent`
 
 <T tag="span" class="☘-badge" data-processing data-primary="danger" style="
-    --indent-badge: 0; 
-    text-indent: 1.2em; 
+    --indent-badge: 30px; 
     font-size: 20px; 
-    --weight-badge-processing: 2px;
+    --weight-badge-processing: 6px;
     --color-badge: var(--primary-7)
 ">`debug`</T>
 
 ```pug
 span.☘-badge(data-processing data-primary="danger" style={
-    "--indent-badge": "0",
-    "text-indent": "1.2em",
+    "--indent-badge": "30px",
     "font-size": "20px",
-    "--weight-badge-processing": "2px",
+    "--weight-badge-processing": "6px",
     "--color-badge": "var(--primary-7)"
 })
     span.☘-code.☘-font-mono debug
 ```
-
-上述示例代码依然使用 `text-indent`，在Safari中可以观察到波纹是椭圆形，且圆心也偏移了。
 
 ***
 

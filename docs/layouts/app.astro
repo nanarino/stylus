@@ -2,9 +2,10 @@
 import { ClientRouter } from "astro:transitions"
 import "lib/index.styl"
 import prefix from "docs/scripts/prefix"
-import Queue from "docs/components/message/queue.astro"
 import favicon from "docs/icons/logo/color/clover.svg"
 import themeIIFE from "@holy-two/data-theme/dist/iife?url"
+import FontInject from "docs/components/FontInject.astro"
+import MessageInject from "docs/components/MessageInject.astro"
 
 interface Props {
     title?: string
@@ -23,14 +24,15 @@ const title =
         <meta name="generator" content={Astro.generator} />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="icon" type="image/svg+xml" href={favicon.src} />
-        <ClientRouter />
         <script is:inline fetchpriority="high" src={themeIIFE}></script>
+        <ClientRouter />
+        <FontInject />
+        <MessageInject />
         <script src="/docs/scripts/client/setup.ts"></script>
         <script src="/docs/scripts/client/theme/index.ts"></script>
         <script src="/docs/scripts/client/copy.ts"></script>
     </head>
     <body>
-        <Queue />
         <slot />
     </body>
 </html>

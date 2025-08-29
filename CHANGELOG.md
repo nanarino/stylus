@@ -4,6 +4,8 @@
 
 變數名格式更改 `--color-button-hover` -> `--color-button:hover`
 
+修正部分類名拚寫錯誤
+
 
 ## v0.11.1
 

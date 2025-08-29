@@ -21,10 +21,3 @@ window.addEventListener("load", () => {
     const h2 = document.querySelector(anchor)
     h2?.scrollIntoView({ behavior: "smooth" })
 })
-
-/**
- * test
- */
-if (import.meta.env.DEV && top?.location?.hostname === "127.0.0.1") {
-    import("./fonts.spec")
-}

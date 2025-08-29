@@ -15,17 +15,11 @@ export {components}
 <T
     tag="button"
     class="☘-button"
-    onclick="
-        window.dispatchEvent(new CustomEvent('☘-message'))
-    "
+    onclick="window.message.emit('\☘')"
 >按</T>
 
 ```pug
-button.☘-button(onclick=function(){
-    window.dispatchEvent(
-        new CustomEvent('☘-message', { detail: '\☘' })
-    )
-}) 按
+button.☘-button(onclick="message.emit('\☘')") 按
 ```
 
 ## `.sm` & `.lg`

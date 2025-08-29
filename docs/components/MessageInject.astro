@@ -1,7 +1,7 @@
 ---
 import prefix from "docs/scripts/prefix"
 import { Icon } from "astro-icon/components"
-import Grid from "../grid.astro"
+import Grid from "./grid.astro"
 ---
 
 {
@@ -30,4 +30,10 @@ import Grid from "../grid.astro"
 
 <div class={`${prefix}-message-queue`} id="message-queue"></div>
 
-<script src="/docs/scripts/client/message.ts"></script>
+<script>
+    import message from "docs/scripts/client/message"
+    Reflect.set(window, "message", message)
+    document.addEventListener("astro:after-swap", () => {
+        message.bind(document.getElementById("message-queue")!)
+    })
+</script>

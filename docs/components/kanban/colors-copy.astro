@@ -20,10 +20,10 @@ import colours from "./colors"
                                         "--background-color-button": `var(--${color}-${
                                             i + 1
                                         })`,
-                                        "--background-color-button\\\:focus": `var(--${
+                                        "--background-color-button\\:focus": `var(--${
                                             i >= 5 ? "white" : "gray-10"
                                         })`,
-                                        "--outline-color-\\\*\\\:focus": `var(--${color}-${
+                                        "--outline-color-\\*\\:focus": `var(--${color}-${
                                             i + 1
                                         })`,
                                     }}
@@ -41,7 +41,19 @@ import colours from "./colors"
     </table>
 </div>
 
-<script src="./colors-copy.ts"></script>
+<script>
+    document.addEventListener("astro:page-load", () => {
+        const table = document.getElementById("colors-kanban")
+        if (table)
+            table.onclick = function (e) {
+                const button = e.target as HTMLButtonElement
+                if (button.tagName === "BUTTON" && button.title) {
+                    window.copy(`rgb(var(${button.title}))`) &&
+                        window.message.success("复制成功")
+                }
+            }
+    })
+</script>
 
 <style lang="stylus" is:global>
 #colors-kanban
