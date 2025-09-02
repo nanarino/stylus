@@ -1,1 +1,0 @@
-import{_ as e}from"./message.B2SO05vk.js";import"./prefix.DdUm4vFL.js";Reflect.set(window,"message",e);document.addEventListener("astro:after-swap",()=>{e.bind(document.getElementById("message-queue"))});
