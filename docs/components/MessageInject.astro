@@ -28,12 +28,10 @@ import Grid from "./grid.astro"
     <Icon name="tips/outline/info-circle" />
 </Grid>
 
-<div class={`${prefix}-message-queue`} id="message-queue"></div>
-
 <script>
     import message from "docs/scripts/client/message"
     Reflect.set(window, "message", message)
     document.addEventListener("astro:after-swap", () => {
-        message.bind(document.getElementById("message-queue")!)
+        message.reset()
     })
 </script>

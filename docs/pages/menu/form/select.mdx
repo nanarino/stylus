@@ -15,17 +15,17 @@ export {components}
 
 没有 `option[selected]` 时自动选中第一个
 
-<T tag="select" class="☘-select" style="width:120px">
+<T tag="select" class="☘-select" style="width:180px">
     <option value="genshin">原神</option>
-    <option value="hsr">崩鉄</option>
-    <option value="zzz">絕區零</option>
+    <option value="hsr">崩坏：星穹铁道</option>
+    <option value="zzz">绝区零</option>
 </T>
 
 ```pug
-select.☘-select(style="width:120px")
+select.☘-select(style="width:180px")
     option(value="genshin") 原神
-    option(value="hsr") 崩鉄
-    option(value="zzz") 絕區零
+    option(value="hsr") 崩坏：星穹铁道
+    option(value="zzz") 绝区零
 ```
 
 未预设 `select::picker-icon` 伪元素图标，原因见[自定义样式](/menu/form/select#custom-style)
@@ -37,47 +37,47 @@ select.☘-select(style="width:120px")
 
 局部变量 `--color-select` 可以直接设置主题颜色RGB值， 这优先于 `--color-input*-wrapper`
 
-<T tag="select" class="☘-select" data-primary="success" style="width:120px">
+<T tag="select" class="☘-select" data-primary="success" style="width:180px">
     <option value="genshin">原神</option>
-    <option value="hsr">崩鉄</option>
-    <option value="zzz">絕區零</option>
+    <option value="hsr">崩坏：星穹铁道</option>
+    <option value="zzz">绝区零</option>
 </T>
 
 ```pug
-select.☘-select(data-primary="success" style="width:120px")
+select.☘-select(data-primary="success" style="width:180px")
     option(value="genshin") 原神
-    option(value="hsr") 崩鉄
-    option(value="zzz") 絕區零
+    option(value="hsr") 崩坏：星穹铁道
+    option(value="zzz") 绝区零
 ```
 
 但会被 `select.☘-select>option[data-primary]` 的效果覆盖
 
-<T tag="select" class="☘-select" data-primary style="width:120px">
+<T tag="select" class="☘-select" data-primary style="width:180px">
     <option value="genshin">原神</option>
-    <option value="hsr">崩鉄</option>
-    <option value="zzz" data-primary="success">絕區零</option>
+    <option value="hsr">崩坏：星穹铁道</option>
+    <option value="zzz" data-primary="success">绝区零</option>
 </T>
 
 ```pug
-select.☘-select(data-primary style="width:120px")
+select.☘-select(data-primary style="width:180px")
     option(value="genshin") 原神
-    option(value="hsr") 崩鉄
-    option(value="zzz" data-primary="success") 絕區零
+    option(value="hsr") 崩坏：星穹铁道
+    option(value="zzz" data-primary="success") 绝区零
 ```
 
 ## `disabled`
 
-<T tag="select" class="☘-select" disabled style="width:120px">
+<T tag="select" class="☘-select" disabled style="width:180px">
     <option value="genshin">原神</option>
-    <option value="hsr">崩鉄</option>
-    <option value="zzz" selected>絕區零</option>
+    <option value="hsr">崩坏：星穹铁道</option>
+    <option value="zzz" selected>绝区零</option>
 </T>
 
 ```pug
-select.☘-select(disabled style="width:120px")
+select.☘-select(disabled style="width:180px")
     option(value="genshin") 原神
-    option(value="hsr") 崩鉄
-    option(value="zzz" selected) 絕區零
+    option(value="hsr") 崩坏：星穹铁道
+    option(value="zzz" selected) 绝区零
 ```
 
 
@@ -95,8 +95,8 @@ select.☘-select(disabled style="width:120px")
         <T class="☘-input-wrapper" data-primary>
             <T tag="select" class="☘-select sm" style="width:88px">
                 <option value="genshin">原神</option>
-                <option value="hsr">崩鉄</option>
-                <option value="zzz">絕區零</option>
+                <option value="hsr">崩铁</option>
+                <option value="zzz">绝区零</option>
             </T>
         </T>
     </T>
@@ -105,8 +105,8 @@ select.☘-select(disabled style="width:120px")
         <T class="☘-input-wrapper" data-primary>
             <T tag="select" class="☘-select lg" style="width:99px">
                 <option value="genshin">原神</option>
-                <option value="hsr">崩鉄</option>
-                <option value="zzz">絕區零</option>
+                <option value="hsr">崩铁</option>
+                <option value="zzz">绝区零</option>
             </T>
         </T>
     </T>

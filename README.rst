@@ -1,6 +1,6 @@
-===========
-☘ 自用样式包
-===========
+===================
+☘ nanarinostyl样式包
+===================
 
 
 .. image:: ./docs/icons/logo/color/clover.svg
@@ -72,7 +72,7 @@
 * color: `arco默认配色 <https://arco.design/palette/list>`_
 * background: `css-doodle <https://css-doodle.com/>`_
 * inspiration: `affinity-css <https://github.com/Deep-Codes/affinity-css/>`_
-* fonts:  ``HYWenHei-85W-zh`` 和 ``JetBrains Mono`` （并非本样式库的预设）
+* fonts:  `HYWenHei-85W <https://www.hanyi.com.cn/index.php>`_ 和 `JetBrains Mono <https://www.jetbrains.com/lp/mono/>`_ （并非本样式库的预设）
 
 约束
 ======

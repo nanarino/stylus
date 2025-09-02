@@ -25,7 +25,7 @@ export {components}
 input(title='username')
 
 input#uname
-lable(for='uname' title='username') 用户名
+label(for='uname' title='username') 用户名
 ```
 另外 没有内容文字的按钮和超链接也需要添加 `title`
 
@@ -80,13 +80,13 @@ outline 2px solid transparent // 覆盖暗黑模式情况下白色优先
 
 <Grid inline>
     <T tag="label" class="☘-form-item">
-        <span>单号</span>
+        <span style="white-space:nowrap">单号</span>
         <T class="☘-input-wrapper" data-primary>
             <T tag="input" class="☘-input" title="单号" value='114514'/>
         </T>
     </T>
     <T tag="label" class="☘-form-item">
-        <span>流水号</span>
+        <span style="white-space:nowrap">流水号</span>
         <T class="☘-input-wrapper">
             <T tag="input" class="☘-input" title="流水号" value='1919810'
                 style="--color-input: var(--yellow-5)"
@@ -97,11 +97,11 @@ outline 2px solid transparent // 覆盖暗黑模式情况下白色优先
 
 ```pug
 label.☘-form-item
-    span 单号
+    span(style="white-space:nowrap") 单号
     .☘-input-wrapper(data-primary)
         input.☘-input(title='单号' value='114514')
 label.☘-form-item
-    span 流水号
+    span(style="white-space:nowrap") 流水号
     .☘-input-wrapper
         input.☘-input(title='流水号' value='1919810' style={
             '--color-input': 'var(--yellow-5)'

@@ -2,7 +2,10 @@ import prefix from "docs/scripts/prefix"
 import sleep from "docs/scripts/sleep"
 import dedent from "dedent"
 
-export const icon = (fo: boolean, i: "check" | "close" | "exclamation" | "info") =>
+export const icon = (
+    fo: boolean,
+    i: "check" | "close" | "exclamation" | "info"
+) =>
     fo
         ? dedent`
             <svg 
@@ -52,10 +55,6 @@ export class Launcher {
         parentElement.append(this.queue)
     }
 
-    bind(queue: HTMLElement) {
-        this.queue = queue
-    }
-
     async emit(
         detail:
             | string
@@ -65,9 +64,9 @@ export class Launcher {
                    */
                   content?: string
                   /**
-                   * 主题 4种 其他非空值等效于传primary
+                   * 主题 4种 其他非空值等效于传 true
                    */
-                  primary?: "success" | "danger" | "warning" | "primary"
+                  primary?: "success" | "danger" | "warning" | boolean
                   /**
                    * 持续时间
                    */
@@ -85,7 +84,7 @@ export class Launcher {
         let content = detail ?? "☘"
         if (typeof content != "string") {
             duration = content.duration ?? 3000
-            primary = `${content.primary ?? ""}`
+            primary = `${content.primary || ""}`
             style = content.style ?? {}
             content = `${content.content ?? "☘"}`
         }
