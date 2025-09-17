@@ -6,17 +6,20 @@ import jetbrainsMono from "@fontsource/jetbrains-mono/400.css?url"
 <link
     rel="stylesheet"
     href={HYWenHei}
-    onload="document.documentElement.style.setProperty('--font-family-base','HYWenHei-85W-zh')"
+    onload="document.documentElement.style.setProperty('--font-family-base', 'HYWenHei-85W-zh')"
 />
 <link
     rel="stylesheet"
     href={jetbrainsMono}
-    onload="document.documentElement.style.setProperty('--font-family-mono','JetBrains Mono')"
+    onload="document.documentElement.style.setProperty('--font-family-mono', 'JetBrains Mono, HYWenHei-85W-zh')"
 />
 <script>
     document.addEventListener("astro:after-swap", () => {
         const root = document.documentElement
         root.style.setProperty("--font-family-base", "HYWenHei-85W-zh")
-        root.style.setProperty("--font-family-mono", "JetBrains Mono")
+        root.style.setProperty(
+            "--font-family-mono",
+            "JetBrains Mono, HYWenHei-85W-zh"
+        )
     })
 </script>
