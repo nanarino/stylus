@@ -1,6 +1,6 @@
-===================
-☘ nanarinostyl样式包
-===================
+=========================
+☘ @nanarino/stylus 样式包
+=========================
 
 
 .. image:: ./docs/icons/logo/color/clover.svg
@@ -33,14 +33,12 @@
 ::
 
     # 安装 npm 套件
-    # 包名就叫這個👇 以後也許叫【@nanarino/stylus】 但是其元件庫命名感覺會有歧義
+    pnpm i @nanarino/stylus
 
-    pnpm i nanarinostyl
+    # 在jsx中 `import '@nanarino/stylus'`
+    # 在css中 `@import url('@nanarino/stylus')`
 
-    # 在jsx中 `import 'nanarinostyl'`
-    # 在css中 `@import url('nanarinostyl')`
-
-    # 在stylus中可以引入其部分源码 见 `import 'nanarinostyl/lib/index.styl'`
+    # 在stylus中可以引入其部分源码 见 `import '@nanarino/stylus/lib/index.styl'`
 
 
 
@@ -93,8 +91,10 @@
     - ``colors = (red #F00)`` 写法应改为Record ``colors = {red: #F00}`` 。
     - 使通配符引入时要确保引入顺序 以确保譬如含有 ``&>*`` 的选择器被 ``&`` 覆盖。
 
-兼容
+相容
 ======
+
+0.x 版本叫 ``nanarinostyl`` 相容性同 1.x 。 特别的部分给出说明
 
 +---------------------+---------+
 | Support             | Version |

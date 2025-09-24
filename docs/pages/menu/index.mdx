@@ -23,7 +23,7 @@ export {components}
 ## install
 
 ```bash
-pnpm i nanarinostyl
+pnpm i @nanarino/stylus
 ```
 
 ## import
@@ -31,13 +31,13 @@ pnpm i nanarinostyl
 在 css 里全局引入
 
 ```css
-@import url('nanarinostyl')
+@import url('@nanarino/stylus')
 ```
 
 或者在 js 里全局引入
 
 ```ts
-import 'nanarinostyl'
+import '@nanarino/stylus'
 ```
 
 按需引入需要你熟悉源码（bushi🤣
@@ -46,15 +46,15 @@ import 'nanarinostyl'
 
 ```styl
 // 覆写函数和定义常量
-@require 'nanarinostyl/lib/mixins/*'
+@require '@nanarino/stylus/lib/mixins/*'
 // 定义 CSS 变量
-@require 'nanarinostyl/lib/variables/*'
+@require '@nanarino/stylus/lib/variables/*'
 // 设置兜底字体
-@require 'nanarinostyl/lib/common/font'
+@require '@nanarino/stylus/lib/common/font'
 // 设置默认主题色
-@require 'nanarinostyl/lib/primary'
+@require '@nanarino/stylus/lib/primary'
 // 引入按钮
-@require 'nanarinostyl/lib/components/button'
+@require '@nanarino/stylus/lib/components/button'
 ```
 
 
@@ -96,7 +96,7 @@ import 'nanarinostyl'
 
 如何自订主題色 参考: [`custom.styl`](https://github.com/nanarino/na-lit/blob/main/src/styles/custom.styl#L16)
 
-如何与其他框架联动 参考 [custom nanarinostyl with tdesign](https://github.com/1-betop/na-tdesign)
+如何与其他框架联动 参考 [custom @nanarino/stylus with tdesign](https://github.com/1-betop/na-tdesign)
 
 ## shadow
 
