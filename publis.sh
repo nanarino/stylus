@@ -1,2 +1,2 @@
 pnpm build:styl
-pnpm publish
+pnpm publish --access public
