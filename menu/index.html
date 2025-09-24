@@ -20,7 +20,7 @@ Microsoft Edge 优先的<br/>
 "> i</span><span style="
     --color-code: from #032F62 r g b;
     --color-code-dark: from #9ECBFF r g b;
-"> nanarinostyl</span></span></code></pre> </section>
+"> @nanarino/stylus</span></span></code></pre> </section>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="import"> <a href="#import" class="na-link na-cannot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> import </h2> 
 <p class="na-paragraph na-font-serif"> 在 css 里全局引入 </p>
 <section class="na-watermark" style="--border-radius-watermark:var(--border-radius-md)"> <pre data-language="css" class="na-pre" style=""><code class="na-code"><span class="line"><span style="
@@ -35,7 +35,7 @@ Microsoft Edge 优先的<br/>
 ">(</span><span style="
     --color-code: from #032F62 r g b;
     --color-code-dark: from #9ECBFF r g b;
-">&#39;nanarinostyl&#39;</span><span style="
+">&#39;@nanarino/stylus&#39;</span><span style="
     --color-code: from #24292E r g b;
     --color-code-dark: from #E1E4E8 r g b;
 ">)</span></span></code></pre> </section>
@@ -46,7 +46,7 @@ Microsoft Edge 优先的<br/>
 ">import</span><span style="
     --color-code: from #032F62 r g b;
     --color-code-dark: from #9ECBFF r g b;
-"> &#39;nanarinostyl&#39;</span></span></code></pre> </section>
+"> &#39;@nanarino/stylus&#39;</span></span></code></pre> </section>
 <p class="na-paragraph na-font-serif"> 按需引入需要你熟悉源码（bushi🤣 </p>
 <p class="na-paragraph na-font-serif"> 比如你只是使用按钮，你需要在 stylus 代码里引入如下 </p>
 <section class="na-watermark" style="--border-radius-watermark:var(--border-radius-md)"> <pre data-language="styl" class="na-pre" style=""><code class="na-code"><span class="line"><span style="
@@ -59,7 +59,7 @@ Microsoft Edge 优先的<br/>
 ">@require</span><span style="
     --color-code: from #032F62 r g b;
     --color-code-dark: from #9ECBFF r g b;
-"> &#39;nanarinostyl/lib/mixins/*&#39;</span></span>
+"> &#39;@nanarino/stylus/lib/mixins/*&#39;</span></span>
 <span class="line"><span style="
     --color-code: from #6A737D r g b;
     --color-code-dark: from #6A737D r g b;
@@ -70,7 +70,7 @@ Microsoft Edge 优先的<br/>
 ">@require</span><span style="
     --color-code: from #032F62 r g b;
     --color-code-dark: from #9ECBFF r g b;
-"> &#39;nanarinostyl/lib/variables/*&#39;</span></span>
+"> &#39;@nanarino/stylus/lib/variables/*&#39;</span></span>
 <span class="line"><span style="
     --color-code: from #6A737D r g b;
     --color-code-dark: from #6A737D r g b;
@@ -81,7 +81,7 @@ Microsoft Edge 优先的<br/>
 ">@require</span><span style="
     --color-code: from #032F62 r g b;
     --color-code-dark: from #9ECBFF r g b;
-"> &#39;nanarinostyl/lib/common/font&#39;</span></span>
+"> &#39;@nanarino/stylus/lib/common/font&#39;</span></span>
 <span class="line"><span style="
     --color-code: from #6A737D r g b;
     --color-code-dark: from #6A737D r g b;
@@ -92,7 +92,7 @@ Microsoft Edge 优先的<br/>
 ">@require</span><span style="
     --color-code: from #032F62 r g b;
     --color-code-dark: from #9ECBFF r g b;
-"> &#39;nanarinostyl/lib/primary&#39;</span></span>
+"> &#39;@nanarino/stylus/lib/primary&#39;</span></span>
 <span class="line"><span style="
     --color-code: from #6A737D r g b;
     --color-code-dark: from #6A737D r g b;
@@ -103,7 +103,7 @@ Microsoft Edge 优先的<br/>
 ">@require</span><span style="
     --color-code: from #032F62 r g b;
     --color-code-dark: from #9ECBFF r g b;
-"> &#39;nanarinostyl/lib/components/button&#39;</span></span></code></pre> </section>
+"> &#39;@nanarino/stylus/lib/components/button&#39;</span></span></code></pre> </section>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="data-theme"> <a href="#data-theme" class="na-link na-cannot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> <code class="na-code">data-theme</code> </h2> 
 <p class="na-paragraph na-font-serif"> 主题变量 <code class="na-code">theme: &#39;light&#39;|&#39;dark&#39;</code><br/>
 它保存在 <code class="na-code">document.documentElement.dataset</code> 和 <code class="na-code">localStorage</code> 里 </p>
@@ -122,7 +122,7 @@ Microsoft Edge 优先的<br/>
 <p class="na-paragraph na-font-serif"> 需要 <code class="na-code">[data-primary]</code> 才可以额外获得主题色的组件往往具有局部变量，如 <code class="na-code">button</code> 的 <code class="na-code">--color-button</code><br/>
 不需要 <code class="na-code">[data-primary]</code> 就具备主题色的组件往往具有全局变量，如 <code class="na-code">tag</code> 的 <code class="na-code">--color-tag</code> </p>
 <p class="na-paragraph na-font-serif"> 如何自订主題色 参考: <a class="na-link astro-hzgikfjw" href="https://github.com/nanarino/na-lit/blob/main/src/styles/custom.styl#L16" target="_blank"> <code class="na-code">custom.styl</code> </a>  </p>
-<p class="na-paragraph na-font-serif"> 如何与其他框架联动 参考 <a class="na-link astro-hzgikfjw" href="https://github.com/1-betop/na-tdesign" target="_blank"> custom nanarinostyl with tdesign </a>  </p>
+<p class="na-paragraph na-font-serif"> 如何与其他框架联动 参考 <a class="na-link astro-hzgikfjw" href="https://github.com/1-betop/na-tdesign" target="_blank"> custom @nanarino/stylus with tdesign </a>  </p>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="shadow"> <a href="#shadow" class="na-link na-cannot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> shadow </h2> 
 <ul>
 <li class="na-list">通配变量 <code class="na-code">--box-shadow-color</code> 阴影颜色RGB值，默认是 <code class="na-code">--gray-4</code> 这里是 <code class="na-code">--primary-4</code></li>
