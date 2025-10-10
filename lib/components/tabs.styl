@@ -1,0 +1,64 @@
+.{prefix}-tabs
+    // --font-size-tabs: var(--font-size-body);
+    // --line-height-tabs: var(--line-height-body);
+    display flex
+    gap 8px
+    padding 0 8px
+    list-style none
+    margin 0
+    height calc(var(--line-height-tabs, var(--line-height-body)) + 2 * (var(--underline-width-tab-name, 2px) + var(--padding-vertical-tab-name, 3px)))
+    overflow-y hidden
+    white-space nowrap
+    background-color rgb(var(--background-color-tabs, var(--white)))
+
+    &.lg
+        --font-size-body var(--font-size-h5)
+        --line-height-body var(--line-height-h5)
+        --underline-width-tab-name 3px
+        --padding-vertical-tab-name 4px
+        --padding-horizontal-tab-name 1px
+
+    @media screen and (min-width: 768px)
+        & ::-webkit-scrollbar
+            width 0
+            height 0
+        &
+            scrollbar-width none
+
+.{prefix}-tab 
+    display flex
+    align-items center
+    gap var(--gap-tabs, 2px)
+    margin 0 8px
+
+    :where(button)
+        padding 0
+        margin 0
+        border 0
+        outline 0
+        background none
+        font-family inherit
+        font-size var(--font-size-tabs, var(--font-size-body))
+        color inherit
+        &:hover
+            opacity: 1
+            color rgb(var(--color-tabs, var(--primary-6)))
+
+    &-name
+        line-height var(--line-height-tabs, var(--line-height-body))
+        padding var(--padding-vertical-tab-name, 3px) var(--padding-horizontal-tab-name, 0)
+        border-width var(--underline-width-tab-name, 2px) 0
+        border-style solid
+        border-color transparent
+        ~/:where(:not([data-active])) &
+            cursor pointer
+        ~/:where([data-active]) &
+            border-bottom-color rgb(var(--color-tabs, var(--primary-6)))
+            color rgb(var(--color-tabs, var(--primary-6)))
+
+    &-operation 
+        cursor pointer
+        display flex
+        align-items center
+        height fit-content
+        opacity var(--opacity-tab-operation, 0.4)

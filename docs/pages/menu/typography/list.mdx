@@ -3,8 +3,10 @@ layout: "docs/layouts/main.astro"
 title: 列表
 ---
 
-import {components} from 'docs/components/markdown/index.mdx';
-export {components};
+import T from "docs/components/T.astro"
+import { Icon } from "astro-icon/components"
+import {components} from 'docs/components/markdown/index.mdx'
+export {components}
 
 # list
 
@@ -37,4 +39,94 @@ export {components};
 ```markdown
 1.  R U R' U R U2 R' 
 2.  (R' F R F') R U2' R' U (R U2' R') 
+```
+
+## tabs
+
+页签列表不属于排版，放到这里是为了不让本篇篇幅太短（
+
+<T
+    tag="ul" 
+    class="☘-tabs"
+>
+    <T tag="li" class="☘-tab" dataset={{active:true}}>
+        <T tag="button" class="☘-tab-name">蔡徐坤</T>
+    </T>
+    <T tag="li" class="☘-tab">
+        <T tag="button" class="☘-tab-name">陈立农</T>
+    </T>
+    <T tag="li" class="☘-tab">
+        <T tag="button" class="☘-tab-name">范丞丞</T>
+        <T tag="button" class="☘-tab-operation">
+            <Icon name="tips/outline/close" />
+        </T>
+    </T>
+</T>
+
+```pug
+ul.☘-tabs
+    li.☘-tab(data-active)
+        button.☘-tab-name 蔡徐坤
+    li.☘-tab
+        button.☘-tab-name 陈立农
+    li.☘-tab
+        button.☘-tab-name 范丞丞
+        button.☘-tab-operation
+            svg(data-icon='tips/outline/close')
+```
+
+- `--gap-tabs` 间隔
+- `--underline-width-tab-name` 激活时的文本下划线高度
+- `--padding-horizontal-tab-name` 横向文本内距
+- `--padding-vertical-tab-name` 纵向文本内距
+- `--opacity-tab-operation` 操作图示透明度
+- `--color-tabs` 字体/操作图示颜色
+- `--background-color-tabs` 背景色
+- `--font-size-tabs` 字体大小
+- `--line-height-tabs` 行高
+
+页签列表需要使用js来控制，变量设置得多也是为了封装js方便在透过shadowDOM设置样式
+
+这里只展示样式，衍生的lit库等见[主页](/)
+
+### `.lg`
+
+<T
+    tag="ul" 
+    class="☘-tabs lg"
+    dataset={{ primary:"danger" }}
+    style="--background-color-tabs: var(--black); color: rgb(var(--white))"
+>
+    <T tag="li" class="☘-tab" dataset={{active:true}}>
+        <T tag="button" class="☘-tab-name">蔡徐坤</T>
+    </T>
+    <T tag="li" class="☘-tab">
+        <T tag="button" class="☘-tab-name">陈立农</T>
+    </T>
+    <T tag="li" class="☘-tab">
+        <T tag="button" class="☘-tab-name">范丞丞</T>
+        <T tag="button" class="☘-tab-operation">
+            <Icon name="tips/outline/close" />
+        </T>
+    </T>
+</T>
+
+`ul.☘-tabs.lg` 预设更大的变量值
+
+```pug
+ul.☘-tabs.lg(
+    data-primary="danger"
+    style="
+        --background-color-tabs: var(--black);
+        color: rgb(var(--white))
+    "
+)
+    li.☘-tab(data-active)
+        button.☘-tab-name 蔡徐坤
+    li.☘-tab
+        button.☘-tab-name 陈立农
+    li.☘-tab
+        button.☘-tab-name 范丞丞
+        button.☘-tab-operation
+            svg(data-icon='tips/outline/close')
 ```
