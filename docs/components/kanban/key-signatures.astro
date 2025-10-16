@@ -17,7 +17,7 @@ const MODES = {
     <T class="☘-table" id="key-signatures-kanban">
         <T class="☘-table-header-group">
             <T class="☘-table-row">
-                <T class="☘-table-cell fixed">𝗠𝗼𝗱𝗲</T>
+                <T class="☘-table-cell fixed" title="古典調式名稱">𝗠𝗼𝗱𝗲：</T>
                 <T class="☘-table-cell">𝓘𝓸𝓷𝓲𝓪𝓷</T>
                 <T class="☘-table-cell">𝓐𝓮𝓸𝓵𝓲𝓪𝓷</T>
                 <T class="☘-table-cell">𝓜𝓲𝔁𝓸𝓵𝔂𝓭𝓲𝓪𝓷</T>
@@ -27,9 +27,9 @@ const MODES = {
                 <T class="☘-table-cell">𝓛𝓸𝓬𝓻𝓲𝓪𝓷</T>
             </T>
             <T class="☘-table-row">
-                <T class="☘-table-cell fixed">𝗞𝗲𝘆 𝗦𝗶𝗴𝗻𝗮𝘁𝘂𝗿𝗲</T>
-                <T class="☘-table-cell">𝙈𝙖𝙟𝙤𝙧</T>
-                <T class="☘-table-cell">𝙈𝙞𝙣𝙤𝙧</T>
+                <T class="☘-table-cell fixed" title="五線譜的升降標記個數">𝗞𝗲𝘆 𝗦𝗶𝗴𝗻𝗮𝘁𝘂𝗿𝗲</T>
+                <T class="☘-table-cell" title="大調">𝙈𝙖𝙟𝙤𝙧</T>
+                <T class="☘-table-cell" title="小調">𝙈𝙞𝙣𝙤𝙧</T>
                 <T class="☘-table-cell" />
                 <T class="☘-table-cell" />
                 <T class="☘-table-cell" />
@@ -50,7 +50,7 @@ const MODES = {
                         {offset > 1 ? "sharps" : ""}
                         {offset == 1 ? "sharp" : ""}
                         {offset == 0 ? "sharps/flats" : ""}
-                        {offset == -1 ? "sharp" : ""}
+                        {offset == -1 ? "flat" : ""}
                         {offset < -1 ? "flats" : ""}
                     </T>
                     {(Reflect.ownKeys(MODES) as (keyof typeof MODES)[]).map(
