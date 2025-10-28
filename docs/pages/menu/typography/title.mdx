@@ -7,6 +7,7 @@ import T from "docs/components/T.astro";
 import {components} from 'docs/components/markdown/index.mdx';
 export {components};
 
+标题上下边距为1个字形大小：`margin: 1em 0`
 
 # title
 ## title
@@ -102,17 +103,29 @@ h2.☘-title
         'has-prefix': true,
         "size": 3
     }}
-    style="--color-title-prefix: var(--gold-5)"
+    style="
+        margin: 0;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        --margin-prefix: 1em;
+        --color-title-prefix: var(--gold-5);
+    "
 > 红楼梦 <T tag="span" class="☘-title-subtitle">戚序本</T> </T>
 
 全局变量 `--color-title-prefix`、`--color-blockquote-prefix` 可以自定义前缀主题颜色RGB值
 
+全局变量 `--margin-prefix`、`--gap-prefix` 可以自定义前缀位置，前者在需要使用 `padding` 来解决自动滚动时标题过于贴顶时很有用
+
 ```pug
 h6.☘-title(data-has-prefix) 石头记
 h6.☘-title(data-has-prefix data-primary='danger') 石头记
-.☘-title(data-has-prefix data-size=3 style={
-    '--color-title-prefix': 'var(--gold-5)'
-})
+.☘-title(data-has-prefix data-size=3 style="
+    margin: 0;                              \\
+    padding-top: 1em;                       \\
+    padding-bottom: 1em;                    \\
+    --margin-prefix: 1em;                   \\
+    --color-title-prefix: var(--gold-5);    \\
+")
     |红楼梦
     span.☘-title-subtitle 戚序本
 ```

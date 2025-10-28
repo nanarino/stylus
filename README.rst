@@ -16,12 +16,12 @@
     :alt: Stylus
     :target: https://stylus-lang.com/
 
-.. image:: https://img.shields.io/badge/maintained%20with-pnpm%209.15.2-cc00ff.svg?style=for-the-badge&logo=pnpm
-    :alt: pnpm 9.15.2
+.. image:: https://img.shields.io/badge/maintained%20with-pnpm%2010.16.0-cc00ff.svg?style=for-the-badge&logo=pnpm
+    :alt: pnpm 10.16.0
     :target: https://pnpm.io/
 
-.. image:: https://img.shields.io/badge/Node.js-v22.12.0-026e00.svg?style=for-the-badge&logo=nodedotjs
-    :alt: Node.js v22.12.0
+.. image:: https://img.shields.io/badge/Node.js-v22.19.0-026e00.svg?style=for-the-badge&logo=nodedotjs
+    :alt: Node.js v22.19.0
     :target: https://nodejs.org/
 
 

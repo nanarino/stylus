@@ -11,7 +11,7 @@ interface Doodle extends HTMLElement {
 }
 
 function redraw(css = style[window.theme]) {
-    const doodle = document.querySelector("css-doodle") as Doodle | null
+    const doodle = document.querySelector<Doodle>("css-doodle")
     if (!doodle) return
     if (doodle.compiled) {
         doodle.update(css)
