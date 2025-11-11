@@ -41,8 +41,11 @@
         font-size var(--font-size-tabs, var(--font-size-body))
         color inherit
         &:hover
-            opacity: 1
+            opacity 1
             color rgb(var(--color-tabs, var(--primary-6)))
+        &:focus-visible
+            opacity 1
+            filter drop-shadow(0 0 1pt rgb(var(--color-tabs, var(--primary-6)) \/ 0.8))
 
     &-name
         line-height var(--line-height-tabs, var(--line-height-body))
@@ -50,11 +53,13 @@
         border-width var(--underline-width-tab-name, 2px) 0
         border-style solid
         border-color transparent
-        ~/:where(:not([data-active])) &
-            cursor pointer
+        ~/:where(:has(button:focus-visible)) &
+            border-bottom-color rgb(var(--color-tabs, var(--primary-6)) \/ 0.3)
         ~/:where([data-active]) &
             border-bottom-color rgb(var(--color-tabs, var(--primary-6)))
             color rgb(var(--color-tabs, var(--primary-6)))
+        ~/:where(:not([data-active])) &
+            cursor pointer
 
     &-operation 
         cursor pointer

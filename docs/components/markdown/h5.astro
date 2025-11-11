@@ -17,12 +17,14 @@ const props = Astro.props
 </h5>
 
 <style lang="stylus">
-a
-    &:focus-visible
-        outline none
-        filter drop-shadow(0 0 2px rgb(var(_get_var_by("outline-color-\*\:focus"))))
-        svg
-            fill rgb(var(_get_var_by("outline-color-\*\:focus")))
+a:focus-visible
+    outline none
+    filter drop-shadow(1pt 0 0 rgb(var(--primary-3)))\
+        drop-shadow(-1pt 0 0 rgb(var(--primary-3)))\
+        drop-shadow(0 1pt 0 rgb(var(--primary-3)))\
+        drop-shadow(0 -1pt 0 rgb(var(--primary-3)))
+    svg
+        fill rgb(var(_get_var_by("outline-color-\*\:focus")))
 svg
     width 1em
     height 1em
