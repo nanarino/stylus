@@ -97,6 +97,10 @@ button_background_color_init(background_color)
         --font-size-body var(--font-size-base)
         --line-height-body var(--line-height-base)
         border-radius var(--border-radius-sm)
+        &:where([data-round])
+        &:where([data-square])
+            // --padding-button 1px 1px
+            --padding-horizontal-button @--padding-vertical-button
     
     &.lg
         // --padding-button 8px 16px
@@ -104,15 +108,19 @@ button_background_color_init(background_color)
         --padding-horizontal-button 16px
         --font-size-body var(--font-size-h5)
         --line-height-body var(--line-height-h5)
+        &:where([data-round])
+        &:where([data-square])
+            // --padding-button 8px 8px
+            --padding-horizontal-button @--padding-vertical-button
     
     &:where([data-round])
     &:where([data-square])
         aspect-ratio 1 / 1
         overflow hidden
         --padding-vertical-button var(--padding-horizontal-button, 12px)
-    &:where([data-round])
+    &[data-round]
         border-radius 50%
-    &:where([data-square])
+    &[data-square]
         @supports (background paint(smooth-corners)) 
             &
                 border-radius unset

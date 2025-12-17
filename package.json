@@ -1,7 +1,7 @@
 {
     "name": "@nanarino/stylus",
     "description": "style lib",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "main": "./dist/style.min.css",
     "scripts": {
         "dev": "astro dev --host",
@@ -30,11 +30,11 @@
         "stylus": "^0.64.0"
     },
     "devDependencies": {
-        "@astrojs/mdx": "^4.3.8",
+        "@astrojs/mdx": "^4.3.13",
         "@fontsource/jetbrains-mono": "^5.2.8",
         "@holy-two/data-theme": "^0.0.7",
-        "@types/node": "^22.18.12",
-        "astro": "^5.15.1",
+        "@types/node": "^22.19.3",
+        "astro": "^5.16.6",
         "astro-icon": "^1.1.5",
         "copy-to-clipboard": "^3.3.3",
         "css-doodle": "^0.43.1",
@@ -42,7 +42,7 @@
         "dedent": "^1.7.0",
         "rm-all": "^1.1.1",
         "smooth-corners": "^1.1.0",
-        "style-to-object": "^1.0.12",
+        "style-to-object": "^1.0.14",
         "stylus": "^0.64.0"
     },
     "files": [
