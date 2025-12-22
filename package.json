@@ -1,7 +1,7 @@
 {
     "name": "@nanarino/stylus",
     "description": "style lib",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "main": "./dist/style.min.css",
     "scripts": {
         "dev": "astro dev --host",

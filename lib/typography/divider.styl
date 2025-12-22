@@ -2,8 +2,8 @@
     &:where(hr)
         border-color rgb(var(--gray-2) \/ 0.4)
     &:where(div)
-        padding-top 2em
-        margin-bottom 2em
+        padding-top calc(var(--height-divider, 4em) / 2)
+        margin-bottom calc(var(--height-divider, 4em) / 2)
         overflow hidden
         --box-shadow-color var(--gray-6)
         box-shadow var(--box-shadow-divider-bottom)
@@ -11,7 +11,7 @@
         display inline-block
         vertical-align middle
         height 1em
-        padding-left 1em
-        margin-right 1em
+        padding-left calc(var(--width-divider, 2em) / 2)
+        margin-right calc(var(--width-divider, 2em) / 2)
         --box-shadow-color var(--black)
         box-shadow var(--box-shadow-divider-right)
