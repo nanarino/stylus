@@ -18,7 +18,8 @@ button_background_color_init(background_color)
 
 .{prefix}-button
     /:root
-        // --padding--button 5px 12px
+        // --border-width-button 1px
+        // --padding-button 5px 12px
         @property --percent-button-ripple
             syntax '<percentage>'
             inherits false
@@ -64,7 +65,8 @@ button_background_color_init(background_color)
     button_background_color_init rgb(var(--background-color-button))
     
     &[data-ghost]
-        outline-width 1px
+        outline-width var(--border-width-button, 1px)
+        outline-offset calc(0px - var(--border-width-button, 1px))
         outline-color currentColor
         --background-color-button var(--white)
         {_get_var_by("background-color-button\:focus")} var(--gray-2)
@@ -75,6 +77,7 @@ button_background_color_init(background_color)
             {_get_var_by("background-color-button\:disabled")} 0 0 0 \/ 0
     &:focus-visible
         outline-width 2px
+        outline-offset 0
         outline-color rgb(var(_get_var_by("outline-color-\*\:focus")))
     
     &:not([disabled]):hover
