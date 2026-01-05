@@ -63,8 +63,18 @@ button_background_color_init(background_color)
 
     button_background_color_init rgb(var(--background-color-button))
     
-
+    &[data-ghost]
+        outline-width 1px
+        outline-color currentColor
+        --background-color-button var(--white)
+        {_get_var_by("background-color-button\:focus")} var(--gray-2)
+        &:where([data-primary])
+            --color-button var(--primary-5)
+            {_get_var_by("color-button\:disabled")} var(--primary-2)
+            {_get_var_by("background-color-button\:focus")} var(--primary-1)
+            {_get_var_by("background-color-button\:disabled")} 0 0 0 \/ 0
     &:focus-visible
+        outline-width 2px
         outline-color rgb(var(_get_var_by("outline-color-\*\:focus")))
     
     &:not([disabled]):hover
@@ -152,6 +162,7 @@ button_background_color_init(background_color)
             font-size 0
             max-height @line-height
             uploader-button()
+                font-family inherit
                 font-size var(--font-size-body)
                 line-height var(--line-height-body)
                 padding 0

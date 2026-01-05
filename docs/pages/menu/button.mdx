@@ -102,6 +102,45 @@ each k in ['square', 'round']
 ```
 
 
+## `data-ghost`
+
+<T
+    tag="button"
+    class="☘-button"
+    data-ghost
+    onclick="window.message.emit('👻')"
+>ゆうれい</T>
+<T
+    tag="button"
+    class="☘-button"
+    data-ghost
+    disabled
+>ゆうれい</T>
+<T
+    tag="button"
+    class="☘-button"
+    data-ghost
+    data-primary
+    onclick="window.message.emit({content:'👻',primary:true})"
+>ゆうれい</T>
+<T
+    tag="button"
+    class="☘-button"
+    data-ghost
+    data-primary
+    disabled
+>ゆうれい</T>
+
+```pug
+button.☘-button(data-ghost onclick="message.emit('👻')") ゆうれい
+button.☘-button(data-ghost disabled) ゆうれい
+button.☘-button(data-ghost data-primary disabled) ゆうれい
+button.☘-button(data-ghost data-primary onclick="
+    message.emit({ content:'👻', primary: true })             \\
+") ゆうれい
+```
+
+
 ## custom style
 
 全局变量控制内边距
@@ -119,12 +158,15 @@ each k in ['square', 'round']
 - `--background-color-button:focus` 焦点状态按钮背景颜色
 - `--background-color-button:disabled` 禁用状态按钮背景颜色
 
-<T tag="button" class="☘-button" data-primary style="
-    --background-color-button: var(--blue-5);
-    --background-color-button\:focus: var(--blue-6);
-    --background-color-button\:disabled: var(--blue-2);
-">饿死了么</T>
+<div style="display:grid">
+    <T tag="button" class="☘-button" data-primary style="
+        --background-color-button: var(--blue-5);
+        --background-color-button\:focus: var(--blue-6);
+        --background-color-button\:disabled: var(--blue-2);
+    ">饿死了么</T>
+</div>
 
+按钮外层套上一个 `display:grid` 的容器即可占满一整行
 
 ## upload
 

@@ -24,7 +24,7 @@ document.addEventListener("astro:page-load", () => {
                                 发射成功
                             </span>
                         `,
-                        primary: "primary",
+                        primary: true,
                         style: {
                             "--background-color-message": `var(--${color}-5)`,
                             "--box-shadow-color": `var(--${color}-4)`,
