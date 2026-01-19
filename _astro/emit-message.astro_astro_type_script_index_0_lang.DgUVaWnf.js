@@ -3,4 +3,4 @@ import{i as l,d as i}from"./message.CyguZYKm.js";import"./prefix.DdUm4vFL.js";co
                             <span>
                                 发射成功
                             </span>
-                        `,primary:!0,style:{"--background-color-message":`var(--${o}-5)`,"--box-shadow-color":`var(--${o}-4)`}}),o=r[Math.floor(Math.random()*r.length)],e.innerText=o,e.dataset.color=o,e.style.setProperty("--background-color-button",`var(--${o}-5)`),e.style.setProperty("--background-color-button:focus",`var(--${o}-6)`)}else window.message.info("发射成功",n)}})});
+                        `,primary:!0,style:{"--background-color-message":`var(--${o}-5)`,"--box-shadow-color":`var(--${o}-4)`}}),o=r[Math.floor(Math.random()*r.length)],e.innerText=o,e.dataset.color=o,e.style.setProperty("--background-color-button",`var(--${o}-5)`),e.style.setProperty("--background-color-button--focus",`var(--${o}-6)`)}else window.message.info("发射成功",n)}})});
