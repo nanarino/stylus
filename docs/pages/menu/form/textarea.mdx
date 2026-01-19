@@ -11,18 +11,18 @@ export {components}
 
 # textarea
 
-<T tag="textarea" class="☘-textarea ☘-font-mono" title="helloworld">helloworld</T>
+<T tag="textarea" class="☘-textarea" title="helloworld">helloworld</T>
 
 ```pug
-textarea.☘-textarea.☘-font-mono(title='helloworld') helloworld
+textarea.☘-textarea(title='helloworld') helloworld
 ```
 
 ## `disabled`
 
-<T tag="textarea" class="☘-textarea ☘-font-mono" title="helloworld" disabled style="resize: none">helloworld</T>
+<T tag="textarea" class="☘-textarea" title="helloworld" disabled style="resize: none">helloworld</T>
 
 ```pug
-textarea.☘-textarea.☘-font-mono(
+textarea.☘-textarea(
     title='helloworld' 
     disabled 
     style={ resize: 'none' }
@@ -36,7 +36,7 @@ textarea.☘-textarea.☘-font-mono(
     <T class="☘-input-wrapper">
         <T
             tag="textarea"
-            class="☘-textarea ☘-font-mono"
+            class="☘-textarea"
             title="helloworld"
             placeholder='helloworld'
         />
@@ -47,7 +47,7 @@ textarea.☘-textarea.☘-font-mono(
 label.☘-form-item
     span 程式代码
     .☘-input-wrapper
-        textarea.☘-textarea.☘-font-mono(
+        textarea.☘-textarea(
             title='helloworld'
             placeholder='helloworld'
         )
