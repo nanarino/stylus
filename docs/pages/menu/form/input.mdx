@@ -91,9 +91,9 @@ input.☘-input.☘-font-mono(
 
 ## `data-primary`
 
-设置 `input.☘-input[data-primary]` 可以覆盖全局css变量 `--outline-color-*:focus`，或置于 `☘-input-wrapper[data-primary]` 中
+设置 `input.☘-input[data-primary]` 可以覆盖全局css变量 `--outline-color-any--focus`，或置于 `☘-input-wrapper[data-primary]` 中
 
-局部变量 `--color-input` 可以直接设置主题颜色RGB值，这优先于 `--color-input*-wrapper`
+局部变量 `--color-input` 可以直接设置主题颜色RGB值，这优先于 `--color-input-wrapper`
 
 <Grid inline>
 {
@@ -239,7 +239,7 @@ input.☘-input(
         />
     </T>
     <T class="☘-input-wrapper" style="
-        --color-input\*-wrapper: var(--blue-6);
+        --color-input-wrapper: var(--blue-6);
         --background-color-selection: var(--blue-9);
         --color-selection: var(--blue-1);
     ">
@@ -260,7 +260,7 @@ input.☘-input(
     input.☘-input(title='with-suffix')
     svg.☘-input-suffix(role="button" aria-label="close" width=16 height=16)
 .☘-input-wrapper(style={
-    '--color-input*-wrapper': 'var(--blue-6)'
+    '--color-input-wrapper': 'var(--blue-6)'
     '--background-color-selection': 'var(--blue-9)',
     '--color-selection': 'var(--blue-1)',
 })

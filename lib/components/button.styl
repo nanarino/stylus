@@ -27,10 +27,10 @@ button_background_color_init(background_color)
             
 
     --color-button var(--white)
-    {_get_var_by("color-button\:disabled")} var(--white)
+    --color-button--disabled var(--white)
     --background-color-button var(--primary-5)
-    {_get_var_by("background-color-button\:focus")} var(--primary-6)
-    {_get_var_by("background-color-button\:disabled")} var(--primary-2)
+    --background-color-button--focus var(--primary-6)
+    --background-color-button--disabled var(--primary-2)
 
     /**
      * 不使用主题
@@ -38,10 +38,10 @@ button_background_color_init(background_color)
     &:where(:not([data-primary]))
         // color unset // 在Safari中是蓝色？
         --color-button var(--gray-10)
-        {_get_var_by("color-button\:disabled")} var(--gray-5)
+        --color-button--disabled var(--gray-5)
         --background-color-button var(--gray-2)
-        {_get_var_by("background-color-button\:focus")} var(--gray-3)
-        {_get_var_by("background-color-button\:disabled")} var(--gray-1)
+        --background-color-button--focus var(--gray-3)
+        --background-color-button--disabled var(--gray-1)
     
     cursor pointer
     user-select none
@@ -69,38 +69,38 @@ button_background_color_init(background_color)
         outline-offset calc(0px - var(--border-width-button, 1px))
         outline-color currentColor
         --background-color-button var(--white)
-        {_get_var_by("background-color-button\:focus")} var(--gray-2)
+        --background-color-button--focus var(--gray-2)
         &:where([data-primary])
             --color-button var(--primary-5)
-            {_get_var_by("color-button\:disabled")} var(--primary-2)
-            {_get_var_by("background-color-button\:focus")} var(--primary-1)
-            {_get_var_by("background-color-button\:disabled")} 0 0 0 \/ 0
+            --color-button--disabled var(--primary-2)
+            --background-color-button--focus var(--primary-1)
+            --background-color-button--disabled 0 0 0 \/ 0
     &:focus-visible
         outline-width 2px
         outline-offset 0
-        outline-color rgb(var(_get_var_by("outline-color-\*\:focus")))
+        outline-color rgb(var(--outline-color-any--focus))
     
     &:not([disabled]):hover
         box-shadow var(--box-shadow-drop-bottom)
     
     &[disabled]
         cursor not-allowed
-        color rgb(var(_get_var_by("color-button\:disabled")))
+        color rgb(var(--color-button--disabled))
         &::-ms-browse
-            color rgb(var(_get_var_by("color-button\:disabled")))
+            color rgb(var(--color-button--disabled))
         &::-webkit-file-upload-button
-            color rgb(var(_get_var_by("color-button\:disabled")))
+            color rgb(var(--color-button--disabled))
         &::file-selector-button
-            color rgb(var(_get_var_by("color-button\:disabled")))
-        background-color rgb(var(_get_var_by("background-color-button\:disabled")))
+            color rgb(var(--color-button--disabled))
+        background-color rgb(var(--background-color-button--disabled))
     
     &:not([disabled]):focus
-        background-color rgb(var(_get_var_by("background-color-button\:focus")))
+        background-color rgb(var(--background-color-button--focus))
     
     &:not([disabled]):active
         --percent-button-ripple 0%
         transition none
-        background-color rgb(var(_get_var_by("background-color-button\:focus")))
+        background-color rgb(var(--background-color-button--focus))
 
 
     &.sm

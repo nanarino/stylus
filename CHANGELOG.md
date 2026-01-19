@@ -1,5 +1,9 @@
 # 更新日志 17/8/2025
 
+## v1.1.0
+
+變數名格式更改 `--color-button:hover` -> `--color-button--hover`
+
 ## v1.0.1
 
 添加頁簽

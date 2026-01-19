@@ -153,17 +153,17 @@ button.☘-button(data-ghost data-primary onclick="
 背景色设置的饱和度高时 最好同时使用 `[data-primary]` 让文字颜色预设白色
 
 - `--color-button` 按钮文字颜色
-- `--color-button:disabled` 禁用状态按钮文字颜色
+- `--color-button--disabled` 禁用状态按钮文字颜色
 - `--background-color-button` 按钮背景颜色
-- `--background-color-button:focus` 焦点状态按钮背景颜色
-- `--background-color-button:disabled` 禁用状态按钮背景颜色
+- `--background-color-button--focus` 焦点状态按钮背景颜色
+- `--background-color-button--disabled` 禁用状态按钮背景颜色
 - `--border-width-button` 按钮边框粗细（适用于 `data-ghost` 状态）
 
 <div style="display:grid">
     <T tag="button" class="☘-button" data-ghost data-primary style="
         --background-color-button: var(--magenta-2);
-        --background-color-button\:focus: var(--magenta-3);
-        --background-color-button\:disabled: var(--magenta-1);
+        --background-color-button--focus: var(--magenta-3);
+        --background-color-button--disabled: var(--magenta-1);
         --border-width-button: 4px;
         gap: 8px;
     ">

@@ -3,8 +3,8 @@
     // --color-image var(--white)
     // --color-image-mask var(--black)
     --color-link var(--color-image, var(--white))
-    {_get_var_by("color-link\:hover")} var(--gray-2)
-    {_get_var_by("color-link\:disabled")} var(--gray-4)
+    --color-link--hover var(--gray-2)
+    --color-link--disabled var(--gray-4)
 
 
     display inline-flex
@@ -83,12 +83,12 @@
     // 图片上传
     &.{prefix}-input-wrapper
 
-        color rgb(var(_get_var_by("color-input\*", wrapper), var(--gray-6)))
+        color rgb(var(--color-input-wrapper, var(--gray-6)))
 
         input[type=file].{prefix}-input
 
             --color-input var(--gray-6)
-            {_get_var_by("outline-color-\*\:focus")} var(_get_var_by("color-input\*", wrapper), var(--color-input))
+            --outline-color-any--focus var(--color-input-wrapper, var(--color-input))
 
             &:where([data-primary])
                 --color-input var(--primary-6)
@@ -96,7 +96,7 @@
             position absolute
             inset 0px
             border-radius var(--border-radius-md)
-            border 2px dashed rgb(var(_get_var_by("outline-color-\*\:focus")))
+            border 2px dashed rgb(var(--outline-color-any--focus))
             // opacity 0
             cursor pointer
             color transparent
@@ -111,7 +111,7 @@
                 cursor not-allowed
                 opacity .3
             &:focus-visible
-                outline-color rgb(var(_get_var_by("outline-color-\*\:focus")))
+                outline-color rgb(var(--outline-color-any--focus))
 
             transition box-shadow .3s, opacity .3s
             

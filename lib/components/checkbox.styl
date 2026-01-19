@@ -2,7 +2,7 @@
 
     // --indent-checkbox 1.4em
     // --color-checkbox var(--primary-6)
-    // --color-checkbox:disabled var(--primary-3)
+    // --color-checkbox--disabled var(--primary-3)
 
     min-height var(--line-height-body)
     position relative
@@ -41,7 +41,7 @@
              * 使用 `^[1..1]` 代替 `../` 减少编译后体积以及选择器冗余
              */
             ^[1..1]:focus-visible+&
-                outline 2px solid rgb(var(_get_var_by("color-input\*", wrapper), var(_get_var_by("outline-color-\*\:focus"))))
+                outline 2px solid rgb(var(--color-input-wrapper, var(--outline-color-any--focus)))
                 border-radius var(--border-radius-sm)
             ^[1..1]:disabled+&
                 color rgb(var(--gray-6))
@@ -67,7 +67,7 @@
                 border-color rgb(var(--color-checkbox, var(--primary-6)))
                 background-color @border-color
             ^[1..1]:checked:disabled+&
-                border-color rgb(var(_get_var_by("color-checkbox\:disabled"), var(--primary-3)))
+                border-color rgb(var(--color-checkbox--disabled, var(--primary-3)))
                 background-color @border-color
             ^[1..1]:disabled+&
                 background-color rgb(var(--gray-1))
@@ -78,7 +78,7 @@
                 background-color rgb(var(--color-checkbox, var(--primary-6)))
                 background-clip content-box
             ~/[data-indeterminate] ^[-2..-2]:disabled+&
-                background-color rgb(var(_get_var_by("color-checkbox\:disabled"), var(--primary-3)))
+                background-color rgb(var(--color-checkbox--disabled, var(--primary-3)))
         /**
          * 内框
          */

@@ -39,7 +39,7 @@ document.addEventListener("astro:page-load", () => {
                         `var(--${color}-5)`
                     )
                     button.style.setProperty(
-                        "--background-color-button:focus",
+                        "--background-color-button--focus",
                         `var(--${color}-6)`
                     )
                 } else {

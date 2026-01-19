@@ -2,7 +2,7 @@
 .{prefix}-select
     // --padding-vertical-select 4px
     // --padding-horizontal-select 12px
-    --color-select var(_get_var_by("color-input\*", wrapper), var(_get_var_by("outline-color-\*\:focus")))
+    --color-select var(--color-input-wrapper, var(--outline-color-any--focus))
     
     flex 1
     // 默认的
@@ -65,7 +65,7 @@
             color rgb(var(--white))
             background-color rgb(var(--primary-5))
             &:focus-visible
-                outline-color rgb(var(_get_var_by("outline-color-\*\:focus")))
+                outline-color rgb(var(--outline-color-any--focus))
     
     // 彈出層
     &::picker(select)
