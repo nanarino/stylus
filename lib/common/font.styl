@@ -4,17 +4,17 @@
     unicode-range U+1F000-1F644, U+203C-3299
 
 _set_font_base()
-    font-family var(--font-family-normal, var(--font-family-base, --font-family-normal-default))
+    font-family var(--font-family-normal, var(--font-family-base, --font-family-normal--default))
 _set_font_serif()
-    font-family var(--font-family-serif, var(--font-family-base, --font-family-serif-default))
+    font-family var(--font-family-serif, var(--font-family-base, --font-family-serif--default))
 _set_font_mono()
-    font-family var(--font-family-mono, var(--font-family-base, --font-family-mono-default))
+    font-family var(--font-family-mono, var(--font-family-base, --font-family-mono--default))
 
 :root // 兜底
     font-size var(--font-size-body)
-    --font-family-normal-default 'system-ui', '—apple-system', 'Segoe UI', 'Rototo', 'Emoji', 'Helvetica', 'Arial', 'sans-serif'
-    --font-family-serif-default 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'
-    --font-family-mono-default 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'
+    --font-family-normal--default 'system-ui', '—apple-system', 'Segoe UI', 'Rototo', 'Emoji', 'Helvetica', 'Arial', 'sans-serif'
+    --font-family-serif--default 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'
+    --font-family-mono--default 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'
     _set_font_base()
 .{prefix}-font-serif // 衬线
     _set_font_serif()
