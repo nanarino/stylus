@@ -8,25 +8,25 @@ input_stat(tag)
     font-size var(--font-size-body)
     line-height var(--line-height-body)
 
-    caret-color rgb(var(_get_var_by(color, tag)))
+    caret-color oklch(var(_get_var_by(color, tag)))
 
-    background-color rgb(var(--gray-2))
+    background-color oklch(var(--gray-2))
     &:hover
     &:focus-visible
         box-shadow var(--box-shadow-drop-bottom)
     &:focus-visible
-        outline-color rgb(var(_get_var_by(color, tag)))
+        outline-color oklch(var(_get_var_by(color, tag)))
     transition outline-color .3s, box-shadow .3s
 
     &[disabled]
         cursor not-allowed
-        background-color rgb(var(--gray-1))
-        color rgb(var(--gray-6))
+        background-color oklch(var(--gray-1))
+        color oklch(var(--gray-6))
         &:hover
             box-shadow none
     
     &::-webkit-input-placeholder
-        color rgb(var(--gray-5))
+        color oklch(var(--gray-5))
         font-size var(--font-size-body)
         line-height var(--line-height-body)
 
@@ -93,7 +93,7 @@ input_stat(tag)
 
         /.{prefix}-input-wrapper
             &:has(^[0..1])
-                background-color rgb(var(--gray-2))
+                background-color oklch(var(--gray-2))
             &:has(.{prefix}-input-prefix)
                 & ^[0..1]
                     padding-left calc(var(--padding-horizontal-input, 12px) + var(--font-size-body))
@@ -108,7 +108,7 @@ input_stat(tag)
     min-height var(--line-height-body)
     align-items center
     position relative
-    border 2px none rgb(var(--color-input-wrapper, var(--gray-2)))
+    border 2px none oklch(var(--color-input-wrapper, var(--gray-2)))
     border-radius var(--border-radius-md)
 
     /**
@@ -126,7 +126,7 @@ input_stat(tag)
         
         for tag in buttons
             &:has({tag}:not(.{prefix}-input-prefix):not(.{prefix}-input-suffix))
-                background-color rgb(var(--color-input-wrapper))
+                background-color oklch(var(--color-input-wrapper))
     
     // 校驗后樣式由用戶自訂是:invalid或響應式框架控制更靈活
     // &:has(:invalid)
@@ -142,9 +142,9 @@ input_stat(tag)
             border-radius calc(var(--border-radius-md) - 2px)
             outline 2px solid transparent
             &:focus-visible
-                outline-color rgb(var(--color-input-wrapper, var(--black)))
+                outline-color oklch(var(--color-input-wrapper, var(--black)))
             ~/:where([data-primary]) ^[-1..-1]
-                color rgb(var(--white))
+                color oklch(var(--white))
             
             /**
              * 这是祛除button的代理样式
@@ -163,10 +163,10 @@ input_stat(tag)
         bottom 0
         margin auto 0
         z-index 1
-        color rgb(var(--color-input-wrapper, var(--black)))
+        color oklch(var(--color-input-wrapper, var(--black)))
 
         // ~/[data-primary] ^[-1..-1]
-        //     color rgb(var(--color-input-wrapper))
+        //     color oklch(var(--color-input-wrapper))
         
         /**
          * 这是祛除button的代理样式 前面已经处理 除了padding不同

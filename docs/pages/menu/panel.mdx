@@ -14,7 +14,7 @@ export {components}
 这个样式设计来自于 [_ui5 panel_](https://sap.github.io/ui5-webcomponents/components/Panel/)
 
 <T style={{
-    'border': '2px solid rgb(var(--black))',
+    'border': '2px solid oklch(var(--black))',
     'border-radius': 'var(--border-radius-lg)',
     'overflow': 'hidden',
 }}>
@@ -26,7 +26,7 @@ export {components}
 
 ```pug
 div(style={
-    'border': '2px solid rgb(var(--black))',
+    'border': '2px solid oklch(var(--black))',
     'border-radius': 'var(--border-radius-lg)',
     'overflow': 'hidden',
 })
@@ -64,7 +64,7 @@ details.☘-panel(data-primary)
     class="☘-panel"
     data-marker=">"
     data-primary="warning"
-    style="color:rgb(var(--gold-8))"
+    style="color:oklch(var(--gold-8))"
 >
     <summary>进入</summary>
     <T>到顶了</T>
@@ -74,7 +74,7 @@ details.☘-panel(data-primary)
 details.☘-panel(
     data-marker=">"
     data-primary="warning"
-    style="color:rgb(var(--gold-8))"
+    style="color:oklch(var(--gold-8))"
 )
     summary 进入
     div 到顶了
@@ -82,7 +82,7 @@ details.☘-panel(
 
 ## custom style
 
-- 全局变量 `--color-panel` 可以覆盖面板背景色RGB值
+- 全局变量 `--color-panel` 可以覆盖面板背景色 OKLCH 通道值
 - 全局变量 `--mask-panel-marker` 可以设定面板默认的<Icon style="vertical-align:sub" name="direction/outline/caret-right" width={20} height={20} />箭头图标
 
 箭头图标由 `summary::before` 的 `mask` 遮罩图片实现，屏蔽掉了原本的类似 `li::marker` 实现，可以自定义添加你需要的<Icon style="vertical-align:sub" name="direction/outline/caret-right" width={20} height={20} />图形
@@ -91,7 +91,7 @@ details.☘-panel(
     tag="details"
     class="☘-panel"
     style={{
-        color: 'rgb(var(--blue-6))',
+        color: 'oklch(var(--blue-6))',
         '--color-panel': 'var(--blue-1)'
     }}
     data-primary
@@ -115,7 +115,7 @@ details.☘-panel(
     data-marker="(>)"
     data-primary
     style={
-        color: 'rgb(var(--blue-6))',
+        color: 'oklch(var(--blue-6))',
         '--color-panel': 'var(--blue-1)'
     }
 )
@@ -130,5 +130,5 @@ details.☘-panel(
 style(lang="stylus").
     .☘-panel[data-marker="(>)"] summary::before
         mask url("docs/icons/direction/outline/right-circle.svg")
-        background-color rgb(var(--blue-6))
+        background-color oklch(var(--blue-6))
 ```

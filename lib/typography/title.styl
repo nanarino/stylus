@@ -34,7 +34,7 @@ set_title_styl(size=6)
     &-subtitle
         margin-left var(--font-offset-parent)
         vertical-align bottom
-        color rgb(var(_get_var_by('gray', 6)))
+        color oklch(var(_get_var_by('gray', 6)))
         
 
     for i in range(1 6)
@@ -61,14 +61,14 @@ set_prefix()
         left 0
         top var(--margin-prefix, var(--font-offset-parent))
         bottom @top
-        background-color rgb(var(--color-title-prefix, var(--color-blockquote-prefix, var(--gray-3))))
+        background-color oklch(var(--color-title-prefix, var(--color-blockquote-prefix, var(--gray-3))))
         ^[-1]:where([data-primary])
             --color-title-prefix var(--primary-5)
 
 
 .{prefix}-blockquote
     margin 0
-    color rgb(var(--color-blockquote, var(--gray-7)))
+    color oklch(var(--color-blockquote, var(--gray-7)))
 
 .{prefix}-blockquote
 .{prefix}-title:where([data-has-prefix])

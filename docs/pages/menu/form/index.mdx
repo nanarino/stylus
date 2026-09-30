@@ -36,12 +36,12 @@ label(for='uname' title='username') 用户名
 ```sass
 outline 2px solid transparent // 覆盖暗黑模式情况下白色优先
 &:focus-visible
-    outline-color: rgb(var(--black))
+    outline-color: oklch(var(--black))
 ```
 
 使用键盘获取焦点时应该实现这个样式。默认是黑白。
 
-使用全局css变量 `--outline-color-any--focus` 可以覆盖这个颜色RGB值
+使用全局css变量 `--outline-color-any--focus` 可以覆盖这个颜色 OKLCH 通道值
 
 `input[data-primary]` 等元件预设了 `--outline-color-any--focus` 主题色覆盖黑白。
 
@@ -76,7 +76,7 @@ outline 2px solid transparent // 覆盖暗黑模式情况下白色优先
 
 该容器启用 `.☘-input-wrapper[data-primary]` 也会覆盖全局css变量 `--outline-color-any--focus` 和继承某些样式
 
-直接使用局部变量 `--color-input-wrapper` 也可以设置主题以及焦点时颜色RGB值，优先级低于 `--color-input`。 其也能作用于 `select`、`textarea`
+直接使用局部变量 `--color-input-wrapper` 也可以设置主题以及焦点时颜色 OKLCH 通道值，优先级低于 `--color-input`。 其也能作用于 `select`、`textarea`
 
 <Grid inline>
     <T tag="label" class="☘-form-item">

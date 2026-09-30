@@ -3,8 +3,8 @@
     // --color-menu-item var(--black)
     // --color-menu-item--hover var(--color-menu, var(--primary-6))
     // --color-menu-item--active var(--white)
-    // --background-color-menu-item "from transparent r g b / alpha"
-    // --background-color-menu-item--hover "from transparent r g b / alpha"
+    // --background-color-menu-item "from transparent l c h / alpha"
+    // --background-color-menu-item--hover "from transparent l c h / alpha"
     // --background-color-menu-item--active var(--color-menu, var(--primary-6))
     // --padding-vertical-menu-item 0.5em
     // --padding-horizontal-menu-item 1em
@@ -29,8 +29,8 @@
                 display none
             &::marker
                 display none
-    // 在Safari中使用 `::before` 的元素不支持 `text-indent`
-    // 请使用 `&::after`
+    // ?Safari????`::before` ?????? `text-indent`
+    // ????`&::after`
     summary
     &-submenu
         display flex
@@ -39,7 +39,7 @@
     &-submenu
         &:where([data-folded])
             /**
-              * 收起时 无间距
+              * ????????
               */
             gap 0
         &-title
@@ -89,8 +89,8 @@
         text-indent var(--padding-horizontal-menu-item, 1em)
         display flex
         align-items center
-        background-color rgb(var(--background-color-menu-item, from transparent r g b \/ alpha))
-        color rgb(var(--color-menu-item, var(--black)))
+        background-color oklch(var(--background-color-menu-item, from transparent l c h \/ alpha))
+        color oklch(var(--color-menu-item, var(--black)))
         border-radius var(--border-radius-md)
 
         ~/-item-link
@@ -101,21 +101,21 @@
             cursor pointer
             text-decoration none
             color currentColor
-            border-radius @border-radius // 这个是为了 `a:focus-visible` 能有圆角
+            border-radius @border-radius // ??????`a:focus-visible` ????
 
         &:where([data-active])
         &:where([data-selected])
             cursor auto
-            background-color rgb(var(--background-color-menu-item--active, var(--color-menu, var(--primary-6))))
-            color  rgb(var(--color-menu-item--active, var(--white)))
+            background-color oklch(var(--background-color-menu-item--active, var(--color-menu, var(--primary-6))))
+            color  oklch(var(--color-menu-item--active, var(--white)))
         
         &:not(^[0]-item[data-active]):not(^[0]-item[data-selected]):hover
-            background-color rgb(var(--background-color-menu-item--hover, from transparent r g b \/ alpha))
-            color rgb(var(--color-menu-item--hover, var(--color-menu, var(--primary-6))))
+            background-color oklch(var(--background-color-menu-item--hover, from transparent l c h \/ alpha))
+            color oklch(var(--color-menu-item--hover, var(--color-menu, var(--primary-6))))
         
         ~/-submenu:where([data-folded]) ^[0]
             /**
-             * 收起时 0高度
+             * ????0??
              */
             flex-basis 0
             overflow hidden

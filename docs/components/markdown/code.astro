@@ -12,8 +12,8 @@ if (Astro.slots.has("default")) {
         const dark = style?.["--shiki-dark"]
         if (light && dark) {
             return dedent`<span style="
-                --color-code: from ${light} r g b;
-                --color-code-dark: from ${dark} r g b;
+                --color-code: from ${light} l c h;
+                --color-code-dark: from ${dark} l c h;
             ">`
         }
         return span

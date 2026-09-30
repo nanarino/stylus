@@ -83,7 +83,7 @@ nav
             height 6em
             padding 1.5em
         &.clover:hover
-            filter drop-shadow(0 0 2em rgb(var(--primary-7))) hue-rotate(15deg)
+            filter drop-shadow(0 0 2em oklch(var(--primary-7))) hue-rotate(15deg)
         &.stylus::after
             position absolute
             inset 0
@@ -92,8 +92,8 @@ nav
             border-radius 50%
             background-image linear-gradient(
                 135deg,
-                rgb(var(--lime-6) \/ .6) 30%,
-                rgb(var(--yellow-6) \/ .6)
+                oklch(var(--lime-6) \/ .6) 30%,
+                oklch(var(--yellow-6) \/ .6)
             )
 
 

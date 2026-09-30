@@ -19,15 +19,15 @@ pre.☘-pre
     code.☘-code
         |    print("helloworld")
 ```
-- `--background-color-pre` 代码块背景色RGB值
-- `--background-color-pre-dark` 暗黑模式代码块背景色RGB值
+- `--background-color-pre` 代码块背景色 OKLCH 通道值
+- `--background-color-pre-dark` 暗黑模式代码块背景色 OKLCH 通道值
 
 为了能被 *shiki* 等库设置语法高亮
 
 以下全局变量对 `pre.☘-pre>code.☘-code *` 生效
 
-- `--color-code` 高亮RGB值
-- `--color-code-dark` 暗黑模式高亮RGB值
+- `--color-code` 高亮 OKLCH 通道值
+- `--color-code-dark` 暗黑模式高亮 OKLCH 通道值
 
 
 ## tag
@@ -71,8 +71,8 @@ div(data-primary="success")
 
 ***
 
-- 全局变量 `--background-color-[tag|code]` 背景颜色RGB值
-- 全局变量 `--color-[tag|code]` 字体和边框颜色RGB值
+- 全局变量 `--background-color-[tag|code]` 背景颜色 OKLCH 通道值
+- 全局变量 `--color-[tag|code]` 字体和边框颜色 OKLCH 通道值
 
 <T tag='code' class='☘-code' style={{
     'font-size': `var(--font-size-5)`,

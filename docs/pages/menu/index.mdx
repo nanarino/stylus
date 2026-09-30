@@ -73,7 +73,7 @@ import '@nanarino/stylus'
 - 纯黑 `--black` 
 - 纯白 `--white` 
 
-其他的颜色 各自有10个明度等级 都是RGB值：
+其他的颜色 各自有10个明度等级 都是 OKLCH 通道值：
 
 <ColorsCopy />
 
@@ -100,7 +100,7 @@ import '@nanarino/stylus'
 
 ## shadow
 
-- 通配变量 `--box-shadow-color` 阴影颜色RGB值，默认是 `--gray-4` 这里是 `--primary-4`
+- 通配变量 `--box-shadow-color` 阴影颜色 OKLCH 通道值，默认是 `--gray-4` 这里是 `--primary-4`
 
 以下也都是通配变量
 
@@ -122,7 +122,7 @@ import '@nanarino/stylus'
 
 往 `body>.☘-message-queue` 里 append 以下元素即可显示消息
 
-- `--background-color-message` 局部变量 改变消息背景色RGB
+- `--background-color-message` 局部变量 改变消息背景色 OKLCH 通道
 
 ```pug
 .☘-message(data-primary style={

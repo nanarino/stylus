@@ -11,7 +11,7 @@
     flex-direction column
     align-items center
 
-    color rgb(var(--gray-10))
+    color oklch(var(--gray-10))
 
 
 .{prefix}-message
@@ -21,8 +21,8 @@
 
     border-radius var(--border-radius-md)
     padding 8px
-    color rgb(var(--color-message))
-    background-color rgb(var(--background-color-message))
+    color oklch(var(--color-message))
+    background-color oklch(var(--background-color-message))
     box-shadow var(--box-shadow-drop-bottom)
     margin 4px
 
@@ -40,7 +40,7 @@
             height 16px
             vertical-align middle
             &:where([data-primary])
-                color rgb(var(--primary-6))
+                color oklch(var(--primary-6))
             &+*
                 vertical-align middle
 

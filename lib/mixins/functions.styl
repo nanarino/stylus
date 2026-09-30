@@ -1,11 +1,10 @@
 /**
- * 转为 css native rgb
- * 覆盖 stylus 的 rgb
- * 
- * @override rgb(0 0 0 \/ .5) => `rgb(0 0 0/0.5)`
+ * 转为 css native oklch
+ *
+ * @example oklch(0.58 0.2 25 \/ .5) => `oklch(0.58 0.2 25/0.5)`
  */
-rgb(color)
-    s('rgb(%s)', color)
+oklch(color)
+    s('oklch(%s)', color)
 
 /**
  * 覆盖 stylus 的 selector
@@ -40,6 +39,34 @@ _get_var_by(property, level = none)
         '--%s'%(unquote(property))
     else
         '--%s-%s'%(unquote(property) level)
+
+/**
+ * 保留小数点后 2 位
+ */
+_round2(n)
+    round(n * 100) / 100
+
+/**
+ * OKLCH Lightness：level 1~10
+ * light: 浅→深；dark: 深→浅
+ */
+_get_lightness_by(theme, level, gray = false)
+    t = (level - 1) / 9
+    if theme == 'dark'
+        _round2(0.18 + t * 0.77)
+    else
+        _round2(0.97 - t * (gray ? 0.79 : 0.77))
+
+/**
+ * OKLCH Chroma：level 6 达峰，向两端线性衰减；gray 恒为 0
+ * 峰值略抬高、衰减放缓，便于 yellow/gold 在统一曲线下够艳
+ */
+_get_chroma_by(theme, level, gray = false)
+    if gray
+        0
+    else
+        peak = theme == 'dark' ? 0.24 : 0.28
+        _round2(peak * (1 - abs(level - 6) / 8))
 
 /**
  * 多行省略混入
