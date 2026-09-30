@@ -10,8 +10,8 @@ tag()
     // --color-code var(--primary-9)
     // --background-color-code var(--primary-1)
 
-    color rgb(var(--color-code, var(--primary-9)))
-    background-color rgb(var(--background-color-code, var(--primary-1)))
+    color oklch(var(--color-code, var(--primary-9)))
+    background-color oklch(var(--background-color-code, var(--primary-1)))
     tag()
 
 
@@ -22,9 +22,9 @@ tag()
     // --background-color-tag var(--primary-1)
     
     display inline-block
-    border 1px none rgb(var(--color-tag, var(--primary-6)))
-    color rgb(var(--color-tag, var(--primary-6)))
-    background-color rgb(var(--background-color-tag, var(--primary-1)))
+    border 1px none oklch(var(--color-tag, var(--primary-6)))
+    color oklch(var(--color-tag, var(--primary-6)))
+    background-color oklch(var(--background-color-tag, var(--primary-1)))
     tag()
 
     /.{prefix}-kbd:where(kbd)

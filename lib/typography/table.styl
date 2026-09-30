@@ -1,9 +1,9 @@
 gray-cell()
-    color rgb(var(--gray-9))
-    background-color rgb(var(--gray-1))
+    color oklch(var(--gray-9))
+    background-color oklch(var(--gray-1))
 row-hover-cell()
-    color rgb(var(--color-cell-row--hover, var(--gray-9)))
-    background-color rgb(var(--background-color-cell-row--hover, var(--gray-1)))
+    color oklch(var(--color-cell-row--hover, var(--gray-9)))
+    background-color oklch(var(--background-color-cell-row--hover, var(--gray-1)))
 
 
 .{prefix}-table-wrapper
@@ -71,4 +71,4 @@ row-hover-cell()
             gray-cell()
         
         colgroup>col
-            border 1px none rgb(var(--box-shadow-color) \/ .3)
+            border 1px none oklch(var(--box-shadow-color) \/ .3)

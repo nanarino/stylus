@@ -14,18 +14,18 @@
     cursor pointer
     outline 2px solid transparent
     // text-decoration none
-    color rgb(var(--color-link, var(--primary-6)))
+    color oklch(var(--color-link, var(--primary-6)))
     &:hover
-        color rgb(var(--color-link--hover, var(--primary-5)))
+        color oklch(var(--color-link--hover, var(--primary-5)))
     &:focus
-        color rgb(var(--color-link--focus, var(--primary-7)))
+        color oklch(var(--color-link--focus, var(--primary-7)))
     &[disabled]
     &[aria-disabled]
-        color rgb(var(--color-link--disabled, var(--primary-2)))
+        color oklch(var(--color-link--disabled, var(--primary-2)))
         cursor not-allowed
         // pointer-events none
     &:focus-visible
-        outline-color rgb(var(--outline-color-any--focus))
+        outline-color oklch(var(--outline-color-any--focus))
         border-radius var(--border-radius-sm)
     
     //.{prefix}-code

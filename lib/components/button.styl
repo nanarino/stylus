@@ -62,7 +62,7 @@ button_background_color_init(background_color)
     transition --percent-button-ripple .5s, box-shadow .3s
     transition-timing-function ease-in
 
-    button_background_color_init rgb(var(--background-color-button))
+    button_background_color_init oklch(var(--background-color-button))
     
     &[data-ghost]
         outline-width var(--border-width-button, 1px)
@@ -78,29 +78,29 @@ button_background_color_init(background_color)
     &:focus-visible
         outline-width 2px
         outline-offset 0
-        outline-color rgb(var(--outline-color-any--focus))
+        outline-color oklch(var(--outline-color-any--focus))
     
     &:not([disabled]):hover
         box-shadow var(--box-shadow-drop-bottom)
     
     &[disabled]
         cursor not-allowed
-        color rgb(var(--color-button--disabled))
+        color oklch(var(--color-button--disabled))
         &::-ms-browse
-            color rgb(var(--color-button--disabled))
+            color oklch(var(--color-button--disabled))
         &::-webkit-file-upload-button
-            color rgb(var(--color-button--disabled))
+            color oklch(var(--color-button--disabled))
         &::file-selector-button
-            color rgb(var(--color-button--disabled))
-        background-color rgb(var(--background-color-button--disabled))
+            color oklch(var(--color-button--disabled))
+        background-color oklch(var(--background-color-button--disabled))
     
     &:not([disabled]):focus
-        background-color rgb(var(--background-color-button--focus))
+        background-color oklch(var(--background-color-button--focus))
     
     &:not([disabled]):active
         --percent-button-ripple 0%
         transition none
-        background-color rgb(var(--background-color-button--focus))
+        background-color oklch(var(--background-color-button--focus))
 
 
     &.sm
@@ -140,13 +140,13 @@ button_background_color_init(background_color)
                 mask paint(smooth-corners)
             
 
-    color rgb(var(--color-button))
+    color oklch(var(--color-button))
     &::-ms-browse
-        color rgb(var(--color-button))
+        color oklch(var(--color-button))
     &::-webkit-file-upload-button
-        color rgb(var(--color-button))
+        color oklch(var(--color-button))
     &::file-selector-button
-        color rgb(var(--color-button))
+        color oklch(var(--color-button))
     
 
     // 文件上传
@@ -159,7 +159,7 @@ button_background_color_init(background_color)
         &:has(input[type=file].{prefix}-input^[0][data-primary])
         &:has(input[type=file].{prefix}-input^[0]:disabled)
             .{prefix}-input-prefix
-                color rgb(var(--white))
+                color oklch(var(--white))
         
         .{prefix}-input:where(input[type=file])^[0]
             font-size 0

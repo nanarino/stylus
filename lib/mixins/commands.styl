@@ -1,0 +1,15 @@
+/**
+ * 覆写 primary 的 10 档通道。
+ */
+mixin_primary_channels()
+    for i in 1..10
+        {_get_var_by('primary', i)} var(_get_var_by('lightness', i)) var(_get_var_by('chroma', i)) var(_get_var_by('hue', 'primary'))
+
+/**
+ * 多行省略混入
+ */
+mixin_line_clamp(number)
+    display -webkit-box
+    -webkit-box-orient vertical
+    -webkit-line-clamp number
+    overflow hidden

@@ -5,15 +5,17 @@ import dataset from "docs/scripts/server/dataset"
 interface Props extends astroHTML.JSX.HTMLAttributes {
     tag?: keyof astroHTML.JSX.DefinedIntrinsicElements
     dataset?: Record<string, any>
+    /** astro 7.0+ default Markdown processor: Sätteri 内联文本时不允许换行 所以只能使用attr传入 */
+    text?: string
     [k: string]: any
 }
 
 const props = Astro.props
-let { tag: Tag } = props
+let { tag: Tag, text } = props
 Tag ||= "div"
 const attrs: Record<string, any> = {}
 for (const [key, value] of Object.entries(props)) {
-    if (key !== "tag" && key !== "dataset") {
+    if (key !== "tag" && key !== "dataset" && key !== "text") {
         if (typeof value === "string") {
             Reflect.set(attrs, key, escape(value))
         } else {
@@ -23,4 +25,4 @@ for (const [key, value] of Object.entries(props)) {
 }
 ---
 
-<Tag {...attrs} {...dataset(props.dataset || {})}><slot /></Tag>
+<Tag {...attrs} {...dataset(props.dataset || {})}>{text || <slot />}</Tag>

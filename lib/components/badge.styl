@@ -32,7 +32,7 @@
         left 0
         aspect-ratio 1 / 1
         clip-path inset(var(--margin-badge, .3em) round 50%)
-        background-color rgb(var(--color-badge, var(--primary-6)))
+        background-color oklch(var(--color-badge, var(--primary-6)))
     &:where([data-processing])::after
         content ''
         box-sizing border-box
@@ -42,6 +42,6 @@
         left @top
         aspect-ratio 1 / 1 // 加上border后 IOS上显示不正确 会比1：1宽一个border距离 导致椭圆形波纹 改用outline后正常
         border-radius 50%
-        // border var(--weight-badge-processing) solid rgb(var(--color-badge))
-        outline var(--weight-badge-processing, 1px) solid rgb(var(--color-badge, var(--primary-6)))
+        // border var(--weight-badge-processing) solid oklch(var(--color-badge))
+        outline var(--weight-badge-processing, 1px) solid oklch(var(--color-badge, var(--primary-6)))
         animation badge-processing 1.2s ease-in-out infinite

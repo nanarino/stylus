@@ -1,5 +1,9 @@
 # 更新日志 20/1/2026
 
+## v2.0.0
+
+颜色系统由 `rgb` 改为 `oklch`
+
 ## v1.1.1
 
 變數名格式更改 `--color-button:hover` -> `--color-button--hover`

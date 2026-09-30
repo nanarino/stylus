@@ -3,14 +3,14 @@ layout: "docs/layouts/main.astro"
 title: 图片
 ---
 
-import T from "docs/components/T.astro";
-import escape from "docs/scripts/server/escape";
-import { Icon } from "astro-icon/components";
-import example from "docs/assets/images/example.jpg";
-import "docs/components/image/iine.styl";
-import Uploader from "docs/components/image/uploader.astro";
-import {components} from 'docs/components/markdown/index.mdx';
-export {components};
+import T from "docs/components/T.astro"
+import escape from "docs/scripts/server/escape"
+import { Icon } from "astro-icon/components"
+import example from "docs/assets/images/example.jpg"
+import "docs/components/image/iine.styl"
+import Uploader from "docs/components/image/uploader.astro"
+import {components} from 'docs/components/markdown/index.mdx'
+export {components}
 
 
 # image
@@ -114,7 +114,7 @@ style(lang='stylus').
         svg[data-icon='interactive-button/outline/heart']
         svg[data-icon='interactive-button/fill/heart-fill']
             font-size 24px
-            color rgb(var(--magenta-6))
+            color oklch(var(--magenta-6))
             cursor pointer
         
         &[data-iine] svg[data-icon='interactive-button/outline/heart']
@@ -137,11 +137,12 @@ style(lang='stylus').
             <T
                 class="☘-title"
                 data-size='5'
-            > 标题标题标题标题标题标题标题标题标题标题标题 </T>
+                text="标题标题标题标题标题标题标题标题标题标题标题"
+            />
             <T
                 class="☘-paragraph"
-                data-ellipsis="1"
-            > 描述描述描述描述描述描述描述描述描述描述描述描述 </T>
+                data-ellipsis="1" text="描述描述描述描述描述描述描述描述描述描述描述描述"
+            />
         </T>
         <T class="☘-image-footer-action">
             <Icon
@@ -196,8 +197,8 @@ style(lang='stylus').
 
 以下全局变量可以修改部分样式
 
-- `--color-image` 字体颜色RGB值
-- `--color-image-mask` 遮罩颜色RGB值
+- `--color-image` 字体颜色 OKLCH 通道值
+- `--color-image-mask` 遮罩颜色 OKLCH 通道值
 
 局部还定义了 `.☘-link` 的颜色样式 需要一并修改
 
@@ -252,4 +253,4 @@ span.☘-image.☘-input-wrapper(style={
     svg(width=24)
 ```
 
-`.☘-input-wrapper` 也可以覆写局部变量 `--color-input-wrapper` 修改颜色RGB值
+`.☘-input-wrapper` 也可以覆写局部变量 `--color-input-wrapper` 修改颜色 OKLCH 通道值

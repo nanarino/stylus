@@ -41,10 +41,10 @@
              * 使用 `^[1..1]` 代替 `../` 减少编译后体积以及选择器冗余
              */
             ^[1..1]:focus-visible+&
-                outline 2px solid rgb(var(--color-input-wrapper, var(--outline-color-any--focus)))
+                outline 2px solid oklch(var(--color-input-wrapper, var(--outline-color-any--focus)))
                 border-radius var(--border-radius-sm)
             ^[1..1]:disabled+&
-                color rgb(var(--gray-6))
+                color oklch(var(--gray-6))
                 &[for]
                     cursor not-allowed
         /**
@@ -55,30 +55,30 @@
             width 16px
             height 16px
             box-sizing border-box
-            border 2px solid rgb(var(--gray-4))
+            border 2px solid oklch(var(--gray-4))
             position absolute
             left 0
-            background-color rgb(var(--white))
+            background-color oklch(var(--white))
             border-radius var(--border-radius-sm)
             transition border-color .3s
             ^[1..1]:not(:disabled):hover+&
-                border-color rgb(var(--color-checkbox, var(--primary-6)))
+                border-color oklch(var(--color-checkbox, var(--primary-6)))
             ^[1..1]:checked+&
-                border-color rgb(var(--color-checkbox, var(--primary-6)))
+                border-color oklch(var(--color-checkbox, var(--primary-6)))
                 background-color @border-color
             ^[1..1]:checked:disabled+&
-                border-color rgb(var(--color-checkbox--disabled, var(--primary-3)))
+                border-color oklch(var(--color-checkbox--disabled, var(--primary-3)))
                 background-color @border-color
             ^[1..1]:disabled+&
-                background-color rgb(var(--gray-1))
+                background-color oklch(var(--gray-1))
             ^[1..1]:disabled:not(:checked)+&
-                background-color rgb(var(--gray-2))
+                background-color oklch(var(--gray-2))
             ~/[data-indeterminate] &
                 padding 2px
-                background-color rgb(var(--color-checkbox, var(--primary-6)))
+                background-color oklch(var(--color-checkbox, var(--primary-6)))
                 background-clip content-box
             ~/[data-indeterminate] ^[-2..-2]:disabled+&
-                background-color rgb(var(--color-checkbox--disabled, var(--primary-3)))
+                background-color oklch(var(--color-checkbox--disabled, var(--primary-3)))
         /**
          * 内框
          */
@@ -106,9 +106,9 @@
                         L 1.5 6 \\
                         A 1.5 1.5 0 0 1 0 4.5 \\
                         Z")
-                    background-color rgb(var(--white))
+                    background-color oklch(var(--white))
                     
                 ~/:where([data-marker="-"]) &
-                    background rgb(var(--white))
+                    background oklch(var(--white))
                     height 2px
                     border-radius 2px

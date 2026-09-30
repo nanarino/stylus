@@ -3,3 +3,8 @@
     src url(./HYWenHei-85W-zh.woff2) format("woff2"),\
         url(./HYWenHei-85W-zh.woff) format("woff"),\
         url(./HYWenHei-85W-zh.ttf)
+    // hhea 下降部按拉丁 g/y（约 -301）留白，汉字墨水中心约在基线上方 0.35em，行盒里会显得偏高。
+    // 改用字体自带的 typo 度量（850 / -150）。只改排版基线，西文和数字仍是这套字体。
+    ascent-override 85%
+    descent-override 15%
+    line-gap-override 0%

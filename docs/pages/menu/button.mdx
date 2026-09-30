@@ -16,7 +16,8 @@ export {components}
     tag="button"
     class="☘-button"
     onclick="window.message.emit('\☘')"
->按</T>
+    text="按"
+/>
 
 ```pug
 button.☘-button(onclick="message.emit('\☘')") 按
@@ -109,27 +110,31 @@ each k in ['square', 'round']
     class="☘-button"
     data-ghost
     onclick="window.message.emit('👻')"
->ゆうれい</T>
+    text="ゆうれい"
+/>
 <T
     tag="button"
     class="☘-button"
     data-ghost
     disabled
->ゆうれい</T>
+    text="ゆうれい"
+/>
 <T
     tag="button"
     class="☘-button"
     data-ghost
     data-primary
     onclick="window.message.emit({content:'👻',primary:true})"
->ゆうれい</T>
+    text="ゆうれい"
+/>
 <T
     tag="button"
     class="☘-button"
     data-ghost
     data-primary
     disabled
->ゆうれい</T>
+    text="ゆうれい"
+/>
 
 ```pug
 button.☘-button(data-ghost onclick="message.emit('👻')") ゆうれい
@@ -148,7 +153,7 @@ button.☘-button(data-ghost data-primary onclick="
 - `--padding-horizontal-button` 横向内边距
 - `--padding-vertical-button` 纵向内边距
 
-以下局部变量可以自定义颜色RGB值
+以下局部变量可以自定义颜色 OKLCH 通道值
 
 背景色设置的饱和度高时 最好同时使用 `[data-primary]` 让文字颜色预设白色
 

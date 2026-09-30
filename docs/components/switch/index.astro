@@ -1,7 +1,7 @@
 ---
-import prefix from "docs/scripts/prefix";
-import dataset from "docs/scripts/server/dataset";
-const props = Astro.props;
+import prefix from "docs/scripts/prefix"
+import dataset from "docs/scripts/server/dataset"
+const props = Astro.props
 interface Props {
     /** 不傳時隨機uuid */
     id?: string
@@ -15,11 +15,11 @@ interface Props {
     style?: Record<string, any> | string
     dataset?: Record<string, any>
 }
-let slots = "";
+let slots = ""
 if (Astro.slots.has("default")) {
-    slots = await Astro.slots.render("default");
+    slots = await Astro.slots.render("default")
 }
-let uuid: string
+let uuid = null
 if (!props.id) {
     uuid = crypto.randomUUID()
 }

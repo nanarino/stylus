@@ -3,10 +3,10 @@ layout: "docs/layouts/main.astro"
 title: 表格
 ---
 
-import T from "docs/components/T.astro";
-import KeySignatures from "docs/components/kanban/key-signatures.astro";
-import {components} from 'docs/components/markdown/index.mdx';
-export {components};
+import T from "docs/components/T.astro"
+import KeySignatures from "docs/components/kanban/key-signatures.astro"
+import {components} from 'docs/components/markdown/index.mdx'
+export {components}
 
 # table
 
@@ -160,7 +160,7 @@ td:first-child
     position: sticky
     left: 0
     // 覆盖行的hover效果
-    background-color: rgb(var(--white))
+    background-color: oklch(var(--white))
     // 也可以通过 `<colgroup>` 设置右边框
     box-shadow: var(--box-shadow-divider-right) var(--box-shadow-divider-bottom)
 ```

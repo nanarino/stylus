@@ -28,19 +28,19 @@
     border-radius var(--border-radius-md)
     font-size var(--font-size-body)
     line-height var(--line-height-body)
-    background-color rgb(var(--gray-2))
+    background-color oklch(var(--gray-2))
     &:hover
         box-shadow var(--box-shadow-drop-bottom)
     &:open
     &:focus-visible
-        outline-color rgb(var(_get_var_by(color, select)))
+        outline-color oklch(var(_get_var_by(color, select)))
         box-shadow var(--box-shadow-drop-bottom)
     transition outline-color .3s, box-shadow .3s
 
     &[disabled]
         cursor not-allowed
-        background-color rgb(var(--gray-1))
-        color rgb(var(--gray-6))
+        background-color oklch(var(--gray-1))
+        color oklch(var(--gray-6))
         &:hover
             box-shadow none
     
@@ -55,17 +55,17 @@
         outline @outline
         &:hover
         &:focus-visible
-            color rgb(var(--primary-6))
-            background-color rgb(var(--primary-1))
+            color oklch(var(--primary-6))
+            background-color oklch(var(--primary-1))
         &:focus-visible
-            outline-color rgb(var(_get_var_by(color, select)))
+            outline-color oklch(var(_get_var_by(color, select)))
             &[data-primary]
-                outline-color rgb(var(--primary-6))
+                outline-color oklch(var(--primary-6))
         &:checked
-            color rgb(var(--white))
-            background-color rgb(var(--primary-5))
+            color oklch(var(--white))
+            background-color oklch(var(--primary-5))
             &:focus-visible
-                outline-color rgb(var(--outline-color-any--focus))
+                outline-color oklch(var(--outline-color-any--focus))
     
     // 彈出層
     &::picker(select)
@@ -74,7 +74,7 @@
         border-radius @border-radius
         box-shadow var(--box-shadow-drop-bottom)
         appearance base-select
-        background rgb(var(--white))
+        background oklch(var(--white))
         padding 4px
         gap 4px
         ^[0]:open^[-1..-1]
@@ -86,7 +86,7 @@
     // 要先引入 input 再引入 select
     // 纔能保證未被 `.☘-input-wrapper:where([data-primary]) button` 覆蓋 
     button
-        color rgb(var(--black))
+        color oklch(var(--black))
 
     selectedcontent
         flex 1

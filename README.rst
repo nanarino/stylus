@@ -67,7 +67,6 @@
 借物
 ======
 * icon: `arco官方图标库 <https://arco.design/iconbox/lib/89/0/>`_
-* color: `arco默认配色 <https://arco.design/palette/list>`_
 * background: `css-doodle <https://css-doodle.com/>`_
 * inspiration: `affinity-css <https://github.com/Deep-Codes/affinity-css/>`_
 * fonts:  `HYWenHei-85W <https://www.hanyi.com.cn/index.php>`_ 和 `JetBrains Mono <https://www.jetbrains.com/lp/mono/>`_ （并非本样式库的预设）
@@ -89,31 +88,30 @@
     - ``colors = (red #F00)`` 写法应改为Record ``colors = {red: #F00}`` 。
     - 使通配符引入时要确保引入顺序 以确保譬如含有 ``&>*`` 的选择器被 ``&`` 覆盖。
     - 变量名不使用 ``-`` 和 ``_`` 以外的分割字元，否则将导致在less里不方便使用 。
+
 相容
 ======
-
-0.x 版本叫 ``nanarinostyl`` 相容性同 1.x 。 特别的部分给出说明
 
 +---------------------+---------+
 | Support             | Version |
 +=====================+=========+
-| Chrome              | 105     |
+| Chrome              | 111     |
 +---------------------+---------+
-| Edge                | 105     |
+| Edge                | 111     |
 +---------------------+---------+
 | Firefox             | 121     |
 +---------------------+---------+
-| Opera               | 91      |
+| Opera               | 97      |
 +---------------------+---------+
 | Safari              | 18      |
 +---------------------+---------+
-| Chrome Android      | 105     |
+| Chrome Android      | 111     |
 +---------------------+---------+
 | Firefox for Android | 121     |
 +---------------------+---------+
-| Opera Android       | 72      |
+| Opera Android       | 75      |
 +---------------------+---------+
 | Safari on iOS       | 18      |
 +---------------------+---------+
-| Samsung Internet    | 20.0    |
+| Samsung Internet    | 22      |
 +---------------------+---------+

@@ -3,6 +3,7 @@ layout: "docs/layouts/main.astro"
 title: 全局
 ---
 
+import colors from "docs/components/kanban/colors"
 import T from "docs/components/T.astro"
 import Grid from "docs/components/grid.astro"
 import ColorsCopy from "docs/components/kanban/colors-copy.astro"
@@ -71,15 +72,25 @@ import '@nanarino/stylus'
 全局变量
 
 - 纯黑 `--black` 
-- 纯白 `--white` 
+- 纯白 `--white`
+- 色相 `--hue-{name}`
+- 色度 `--chroma-{level}`
+- 明度 `--lightness-{level}`
 
-其他的颜色 各自有10个明度等级 都是RGB值：
+其中 level ∈ `[1, 10]`， name ∈ &#123; {['primary', 'success', 'danger', 'warning', ...colors].map(primary =>
+    <><T tag='code' class='☘-code ☘-font-mono' style={`--background-color-code:var(--${primary}-2)`}>{primary}</T>, </>
+)}&#125;
+
+前四种为功能主题色，后面为预设色卡：
+
+### 预设色卡
 
 <ColorsCopy />
 
+
 ### `data-primary`
 
-`[data-primary]` 可以让有颜色的标签改变为以下4种目标颜色之一。
+`[data-primary]` 可以修改子元素所继承的功能主题色。
 
 <T tag="ul" class="☘-list">
 {
@@ -94,23 +105,26 @@ import '@nanarino/stylus'
 需要 `[data-primary]` 才可以额外获得主题色的组件往往具有局部变量，如 `button` 的 `--color-button`    
 不需要 `[data-primary]` 就具备主题色的组件往往具有全局变量，如 `tag` 的 `--color-tag`
 
-如何自订主題色 参考: [`custom.styl`](https://github.com/nanarino/na-lit/blob/main/src/styles/custom.styl#L16)
+#### **自订主题**
 
-如何与其他框架联动 参考 [custom @nanarino/stylus with tdesign](https://github.com/1-betop/na-tdesign)
+非常容易，比如设置主题色为蓝色，只需要： <T tag='span' data-primary style='--hue-primary: var(--hue-blue)'>`--hue-primary: var(--hue-blue)`</T>，就赋予了预设色卡中蓝色行的色相
+
+也可以是任意数值的色相和灰阶
+
+
 
 ## shadow
 
-- 通配变量 `--box-shadow-color` 阴影颜色RGB值，默认是 `--gray-4` 这里是 `--primary-4`
+- 通配变量 `--box-shadow-color` 阴影颜色 OKLCH 通道值
 
 以下也都是通配变量
 
-<Grid inline gap="2em">
+<Grid inline gap="1vw">
 {
     ['divider', 'drop'].map(t => 
         ['top', 'left', 'right', 'bottom'].map(p => 
             <T tag='span' class='☘-tag ☘-font-mono' style={{
                 'box-shadow': `var(--box-shadow-${t}-${p})`,
-                '--box-shadow-color': `var(--primary-4)`,
                 'padding': '24px'
             }}>{`--box-shadow-${t}-${p}`}</T>
         )
@@ -122,7 +136,7 @@ import '@nanarino/stylus'
 
 往 `body>.☘-message-queue` 里 append 以下元素即可显示消息
 
-- `--background-color-message` 局部变量 改变消息背景色RGB
+- `--background-color-message` 局部变量 改变消息背景色 OKLCH 通道
 
 ```pug
 .☘-message(data-primary style={

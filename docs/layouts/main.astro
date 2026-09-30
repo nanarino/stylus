@@ -4,7 +4,7 @@ import prefix from "docs/scripts/prefix"
 import Header from "docs/components/header/index.astro"
 import Footer from "docs/components/footer.astro"
 import Menu from "docs/components/menu/summary.astro"
-// import Menu from "docs/components/menu/list.astro";
+// import Menu from "docs/components/menu/list.astro"
 import { getMenu } from "docs/scripts/server/menu"
 
 const menu = await getMenu("./docs/pages/menu")
@@ -48,8 +48,8 @@ const base = import.meta.env.BASE_URL + "menu/"
             border-top 1px solid
             border-image linear-gradient(\
                 to right,\
-                rgb(var(--magenta-5)) 0,\
-                rgb(var(--purple-5)) var(--timeline-y-main),\
+                oklch(var(--magenta-5)) 0,\
+                oklch(var(--purple-5)) var(--timeline-y-main),\
                 transparent var(--timeline-y-main)\
             ) 1
             */
@@ -83,8 +83,8 @@ const base = import.meta.env.BASE_URL + "menu/"
                 animation-timeline --progress-y-main
                 background-image linear-gradient(\
                     to right,\
-                    rgb(var(--magenta-6)) 0,\
-                    rgb(var(--purple-6)) var(--timeline-y-main),\
+                    oklch(var(--magenta-6)) 0,\
+                    oklch(var(--purple-6)) var(--timeline-y-main),\
                     transparent var(--timeline-y-main)\
                 )
 </style>

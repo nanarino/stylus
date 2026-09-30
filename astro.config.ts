@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url"
 
 const stylusMixin = `@require '${fileURLToPath(
     new URL("lib/mixins/*", import.meta.url),
-    { windows: false }
+    { windows: false },
 )}'`
 
 // https://astro.build/config
@@ -20,6 +20,7 @@ export default defineConfig({
             iconDir: "docs/icons",
         }),
     ],
+    compressHTML: true,
     scopedStyleStrategy: "where",
     markdown: {
         shikiConfig: {

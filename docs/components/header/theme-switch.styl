@@ -19,16 +19,16 @@
         
     i:first-of-type
         // 打开按钮 字体颜色
-        color rgb(var(--orange-10))
+        color oklch(var(--orange-10))
         opacity 1
         svg
-            filter drop-shadow(0 0 2px rgb(var(--gold-6)))
+            filter drop-shadow(0 0 2px oklch(var(--gold-6)))
     i:last-of-type
         // 关闭按钮 字体颜色
-        color rgb(var(--blue-10))
+        color oklch(var(--blue-10))
         opacity 0
         svg
-            filter drop-shadow(0 0 2px rgb(var(--blue-6)))
+            filter drop-shadow(0 0 2px oklch(var(--blue-6)))
     
     &:where([data-init])
         // 单页应用的时候不需要这个动画

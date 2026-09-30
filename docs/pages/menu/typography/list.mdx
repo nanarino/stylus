@@ -95,7 +95,7 @@ ul.☘-tabs
     tag="ul" 
     class="☘-tabs lg"
     dataset={{ primary:"danger" }}
-    style="--background-color-tabs: var(--black); color: rgb(var(--white))"
+    style="--background-color-tabs: var(--black); color: oklch(var(--white))"
 >
     <T tag="li" class="☘-tab" dataset={{active:true}}>
         <T tag="button" class="☘-tab-name">蔡徐坤</T>
@@ -118,7 +118,7 @@ ul.☘-tabs.lg(
     data-primary="danger"
     style="
         --background-color-tabs: var(--black);  \\
-        color: rgb(var(--white))                \\
+        color: oklch(var(--white))                \\
     "
 )
     li.☘-tab(data-active)

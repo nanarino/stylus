@@ -93,7 +93,7 @@ input.☘-input.☘-font-mono(
 
 设置 `input.☘-input[data-primary]` 可以覆盖全局css变量 `--outline-color-any--focus`，或置于 `☘-input-wrapper[data-primary]` 中
 
-局部变量 `--color-input` 可以直接设置主题颜色RGB值，这优先于 `--color-input-wrapper`
+局部变量 `--color-input` 可以直接设置主题颜色 OKLCH 通道值，这优先于 `--color-input-wrapper`
 
 <Grid inline>
 {
@@ -224,7 +224,7 @@ input.☘-input(
 
 需要在 `.☘-input-wrapper` 中使用
 
-通配变量 `--background-color-selection` 和 `--color-selection` 可以修改选中文字颜色（RGB）
+通配变量 `--background-color-selection` 和 `--color-selection` 可以修改选中文字颜色（OKLCH 通道）
 
 <Grid inline>
     <T class="☘-input-wrapper">
