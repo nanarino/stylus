@@ -1,0 +1,6 @@
+import{n as e,r as t}from"./message.SjfnUtEb.js";var n=[`red`,`orange`,`gold`,`yellow`,`lime`,`green`,`cyan`,`blue`,`purple`,`pinkpurple`,`magenta`,`gray`],r=[`check`,`close`,`exclamation`,`info`];document.addEventListener(`astro:page-load`,()=>{let i=document.getElementById(`emit-message-kanban`);i&&(i.onclick=function(i){let a=i.target;if(a.tagName===`BUTTON`){let i=Object.hasOwn(a.dataset,`primary`),o=r[Math.floor(Math.random()*r.length)];if(i){let r=Reflect.get(a.dataset,`color`)||`primary`;window.message.emit({content:t`
+                            ${e(i,o)}
+                            <span>
+                                发射成功
+                            </span>
+                        `,primary:!0,style:{"--background-color-message":`var(--${r}-5)`,"--box-shadow-color":`var(--${r}-4)`}}),r=n[Math.floor(Math.random()*n.length)],a.innerText=r,a.dataset.color=r,a.style.setProperty(`--background-color-button`,`var(--${r}-5)`),a.style.setProperty(`--background-color-button--focus`,`var(--${r}-6)`)}else window.message.info(`发射成功`,o)}})});

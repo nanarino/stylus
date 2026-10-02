@@ -1,0 +1,1 @@
+var e=`prefix = "na"`.match(/prefix\s*=\s*["']([^"']+)["']/)?.[1]??``;export{e as t};

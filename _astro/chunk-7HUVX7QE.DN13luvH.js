@@ -1,0 +1,1 @@
+var e=[`dark`,`light`];function t(t){return e.includes(t)}function n(e){return t((e??{})?.detail)}var r=e;export{t as n,r,n as t};
