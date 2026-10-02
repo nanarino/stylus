@@ -10,7 +10,7 @@
     --black 1 0 0
     color-scheme dark
 /**
- * @desc OKLCH 色板：同 L/C 曲线，仅 hue 区分色相
+ * @desc OKLCH 色板：同 L/C 曲线，hue 由原 Arco RGB 主色（*-6）转换
  *
  * token：`--red-6: L C H`
  * 使用：`oklch(var(--red-6))` / `oklch(var(--red-6) / .5)`
@@ -18,17 +18,17 @@
  * light: 1 最浅 → 10 最深；dark: 1 最深 → 10 最浅
  */
 color_hues = {
-    red: 25,
-    orange: 55,
-    gold: 80,
-    yellow: 95,
-    lime: 125,
-    green: 145,
-    cyan: 200,
-    blue: 255,
-    purple: 300,
-    pinkpurple: 325,
-    magenta: 350
+    red: 26,
+    orange: 52,
+    gold: 84,
+    yellow: 99,
+    lime: 127,
+    green: 144,
+    cyan: 195,
+    blue: 254,
+    purple: 296,
+    pinkpurple: 328,
+    magenta: 353
 }
 
 :root, :root[data-theme=light]

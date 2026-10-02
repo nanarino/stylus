@@ -41,32 +41,41 @@ _get_var_by(property, level = none)
         '--%s-%s'%(unquote(property) level)
 
 /**
- * 保留小数点后 2 位
+ * 保留小数点后 3 位（避免浅档 chroma 被四舍五入成 0）
  */
-_round2(n)
-    round(n * 100) / 100
+_round3(n)
+    round(n * 1000) / 1000
 
 /**
- * OKLCH Lightness：level 1~10
- * light: 浅→深；dark: 深→浅
+ * [0,1] → [0,1] 对数缓出：log10(1+k·t) / log10(1+k)
+ * k 越大近 0 爬升越快（峰更尖）；越小峰更宽
+ */
+_log_ease(t, k = 9)
+    math(1 + k * t, 'log') / math(1 + k, 'log')
+
+/**
+ * OKLCH Lightness：level 1~10，单条对数曲线（浅色区更密）
+ * light: 浅→深用缓入；dark: 深→浅用缓出
  */
 _get_lightness_by(theme, level, gray = false)
     t = (level - 1) / 9
-    if theme == 'dark'
-        _round2(0.18 + t * 0.77)
-    else
-        _round2(0.97 - t * (gray ? 0.79 : 0.77))
+    span = gray ? 0.79 : 0.77
+    u = theme == 'dark' ? _log_ease(t) : 1 - _log_ease(1 - t)
+    base = theme == 'dark' ? 0.18 : 0.97
+    sign = theme == 'dark' ? 1 : -1
+    _round3(base + sign * u * span)
 
 /**
- * OKLCH Chroma：level 6 达峰，向两端线性衰减；gray 恒为 0
- * 峰值略抬高、衰减放缓，便于 yellow/gold 在统一曲线下够艳
+ * OKLCH Chroma：相对 level 6 连续对数衰减；gray 恒为 0
+ * /10 + 小 k：拉近 5/6/7，避免 primary-5 像禁用
  */
 _get_chroma_by(theme, level, gray = false)
     if gray
         0
     else
         peak = theme == 'dark' ? 0.24 : 0.28
-        _round2(peak * (1 - abs(level - 6) / 8))
+        d = abs(level - 6) / 10
+        _round3(peak * (1 - _log_ease(d, 3)))
 
 /**
  * 多行省略混入
