@@ -3,10 +3,10 @@ layout: "docs/layouts/main.astro"
 title: 标签
 ---
 
-import T from "docs/components/T.astro";
-import Grid from "docs/components/grid.astro";
-import {components} from 'docs/components/markdown/index.mdx';
-export {components};
+import T from "docs/components/T.astro"
+import Grid from "docs/components/grid.astro"
+import {components} from 'docs/components/markdown/index.mdx'
+export {components}
 
 # code
 
@@ -80,7 +80,7 @@ div(data-primary="success")
     '--background-color-code': `var(--magenta-6)`,
     '--color-code': `var(--magenta-1)`,
     'box-shadow': `var(--box-shadow-drop-right)`
-}}>𝕘𝕙𝕠𝕤𝕥</T>
+}} text="𝕘𝕙𝕠𝕤𝕥" />
 
 ```pug
 code.☘-code(style={

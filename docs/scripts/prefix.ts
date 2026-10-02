@@ -1,10 +1,5 @@
 import setPrefix from "lib/mixins/prefix.styl?raw"
 
-let prefix: string = ""
-try {
-    eval(setPrefix)
-} catch (error) {
-    console.log(error)
-}
+const prefix = setPrefix.match(/prefix\s*=\s*["']([^"']+)["']/)?.[1] ?? ""
 
 export default prefix

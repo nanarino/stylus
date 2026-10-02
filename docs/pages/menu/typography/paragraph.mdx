@@ -3,9 +3,9 @@ layout: "docs/layouts/main.astro"
 title: 段落
 ---
 
-import T from "docs/components/T.astro";
-import {components} from 'docs/components/markdown/index.mdx';
-export {components};
+import T from "docs/components/T.astro"
+import {components} from 'docs/components/markdown/index.mdx'
+export {components}
 
 # paragraph
 
@@ -35,10 +35,10 @@ markdown中的空格另起一行即为 `<p>`
 <T class="☘-paragraph" dataset={{
     "size": 2,
     "ellipsis": 2
-}}>混沌未分天地乱，茫茫渺渺无人见。
+}} text={`混沌未分天地乱，茫茫渺渺无人见。
 自从盘古破鸿蒙，开辟从兹清浊辨。
 覆载群生仰至仁，发明万物接为善。
-欲知造化会元功，须看西游释厄传。</T>
+欲知造化会元功，须看西游释厄传。`} />
 
 ```pug
 .☘-paragraph(data-size=2 data-ellipsis=2)
@@ -55,7 +55,8 @@ markdown中的空格另起一行即为 `<p>`
     <T class="☘-paragraph" dataset={{
         "has-indent": true,
         "ellipsis": 5
-    }}>我欲因之梦吴越，一夜飞度镜湖月。 湖月照我影，送我至剡溪。 谢公宿处今尚在，渌水荡漾清猿啼。 脚著谢公屐，身登青云梯。 半壁见海日，空中闻天鸡。 千岩万转路不定，迷花倚石忽已暝。 熊咆龙吟殷岩泉，栗深林兮惊层巅。 云青青兮欲雨，水澹澹兮生烟。</T>
+    }} text="我欲因之梦吴越，一夜飞度镜湖月。 湖月照我影，送我至剡溪。 谢公宿处今尚在，渌水荡漾清猿啼。 脚著谢公屐，身登青云梯。 半壁见海日，空中闻天鸡。 千岩万转路不定，迷花倚石忽已暝。 熊咆龙吟殷岩泉，栗深林兮惊层巅。 云青青兮欲雨，水澹澹兮生烟。"
+    />
 </div>
 
 ```pug
@@ -72,9 +73,7 @@ div(style={width: "20em"})
 
 markdown中的以 `> ` 为行首的段落即为 `<blockquote><p>`
 
-<T tag="blockquote" class="☘-blockquote">
-    二月二，龍抬頭。
-</T>
+<T tag="blockquote" class="☘-blockquote" text="二月二，龍抬頭。" />
 
 ```pug
 blockquote.☘-blockquote

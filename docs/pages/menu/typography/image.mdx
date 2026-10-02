@@ -3,14 +3,14 @@ layout: "docs/layouts/main.astro"
 title: 图片
 ---
 
-import T from "docs/components/T.astro";
-import escape from "docs/scripts/server/escape";
-import { Icon } from "astro-icon/components";
-import example from "docs/assets/images/example.jpg";
-import "docs/components/image/iine.styl";
-import Uploader from "docs/components/image/uploader.astro";
-import {components} from 'docs/components/markdown/index.mdx';
-export {components};
+import T from "docs/components/T.astro"
+import escape from "docs/scripts/server/escape"
+import { Icon } from "astro-icon/components"
+import example from "docs/assets/images/example.jpg"
+import "docs/components/image/iine.styl"
+import Uploader from "docs/components/image/uploader.astro"
+import {components} from 'docs/components/markdown/index.mdx'
+export {components}
 
 
 # image
@@ -137,11 +137,12 @@ style(lang='stylus').
             <T
                 class="☘-title"
                 data-size='5'
-            > 标题标题标题标题标题标题标题标题标题标题标题 </T>
+                text="标题标题标题标题标题标题标题标题标题标题标题"
+            />
             <T
                 class="☘-paragraph"
-                data-ellipsis="1"
-            > 描述描述描述描述描述描述描述描述描述描述描述描述 </T>
+                data-ellipsis="1" text="描述描述描述描述描述描述描述描述描述描述描述描述"
+            />
         </T>
         <T class="☘-image-footer-action">
             <Icon

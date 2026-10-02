@@ -40,7 +40,7 @@ const watermark = [
                         name="menu"
                         class={`${prefix}-menu`}
                         open={RegExp(`^${base}${item.path}`).test(
-                            Astro.url.pathname
+                            Astro.url.pathname,
                         )}
                         style="order:1"
                     >
@@ -63,7 +63,7 @@ const watermark = [
             /**
              * 当前页面
              */
-            if (RegExp(`^${base}${item.path}\/?$`).test(Astro.url.pathname)) {
+            if (RegExp(`^${base}${item.path}?$`).test(Astro.url.pathname)) {
                 return (
                     <div
                         class={`${prefix}-menu-item ${prefix}-watermark`}

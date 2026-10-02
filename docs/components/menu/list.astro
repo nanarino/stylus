@@ -44,7 +44,7 @@ const watermark = [
                              * 判断是否需要折叠菜单
                              */
                             !RegExp(`^${base}${item.path}`).test(
-                                Astro.url.pathname
+                                Astro.url.pathname,
                             )
                         }
                     >
@@ -66,7 +66,7 @@ const watermark = [
             /**
              * 当前页面
              */
-            if (RegExp(`^${base}${item.path}\/?$`).test(Astro.url.pathname)) {
+            if (RegExp(`^${base}${item.path}?$`).test(Astro.url.pathname)) {
                 return (
                     <li
                         class={`${prefix}-menu-item ${prefix}-watermark`}

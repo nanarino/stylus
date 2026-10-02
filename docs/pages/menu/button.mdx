@@ -16,7 +16,8 @@ export {components}
     tag="button"
     class="☘-button"
     onclick="window.message.emit('\☘')"
->按</T>
+    text="按"
+/>
 
 ```pug
 button.☘-button(onclick="message.emit('\☘')") 按
@@ -109,27 +110,31 @@ each k in ['square', 'round']
     class="☘-button"
     data-ghost
     onclick="window.message.emit('👻')"
->ゆうれい</T>
+    text="ゆうれい"
+/>
 <T
     tag="button"
     class="☘-button"
     data-ghost
     disabled
->ゆうれい</T>
+    text="ゆうれい"
+/>
 <T
     tag="button"
     class="☘-button"
     data-ghost
     data-primary
     onclick="window.message.emit({content:'👻',primary:true})"
->ゆうれい</T>
+    text="ゆうれい"
+/>
 <T
     tag="button"
     class="☘-button"
     data-ghost
     data-primary
     disabled
->ゆうれい</T>
+    text="ゆうれい"
+/>
 
 ```pug
 button.☘-button(data-ghost onclick="message.emit('👻')") ゆうれい

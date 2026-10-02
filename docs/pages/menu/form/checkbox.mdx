@@ -28,9 +28,7 @@ span.☘-checkbox(style="--indent-checkbox: 2em; line-height: 2")
 
 <Grid inline>
     <Checkbox id="HTTP" disabled>HTTP</Checkbox>
-    <Checkbox id="HTTPS" checked disabled dataset={{ 
-        primary : "success" 
-    }}>HTTPS</Checkbox>
+    <Checkbox id="HTTPS" checked disabled dataset={{ primary: "success" }}>HTTPS</Checkbox>
 </Grid>
 
 ```pug
@@ -48,12 +46,7 @@ div
 
 这个样式设计来自于 [_ui5 check-box_](https://sap.github.io/ui5-webcomponents/components/CheckBox/)
 
-<Checkbox
-    id="Superposition"
-    dataset={{ indeterminate : true }}
-    onchange="
-    this.parentElement.removeAttribute('data-indeterminate')
-">半信半疑</Checkbox>
+<Checkbox id="Superposition" dataset={{ indeterminate: true }} onchange="this.parentElement.removeAttribute('data-indeterminate')">半信半疑</Checkbox>
 
 ```pug
 span.☘-checkbox(data-indeterminate)
@@ -79,11 +72,7 @@ span.☘-checkbox(data-indeterminate)
 
 它一般放在列表表头，用来描述只选中了一部分
 
-<Checkbox
-    id="DashAsMark"
-    checked
-    dataset={{ marker : "-" }}
->部分选择</Checkbox>
+<Checkbox id="DashAsMark" checked dataset={{ marker: "-" }}>部分选择</Checkbox>
 
 ```pug
 span.☘-checkbox(data-marker="-")
@@ -105,12 +94,12 @@ marker钩号或破折号由 `label::after` 实现，可以自定义添加你需�
 <Checkbox
     id="BlueTIMBox"
     checked
-    dataset={{ marker : "*" }}
+    dataset={{ marker: "*" }}
     style={{
-        '--color-checkbox': 'var(--blue-6)',
-        '--color-checkbox--disabled': 'var(--blue-2)',
-        color: 'oklch(var(--blue-6))'
-}}>Tim</Checkbox>
+        "--color-checkbox": "var(--blue-6)",
+        "--color-checkbox--disabled": "var(--blue-2)",
+        color: "oklch(var(--blue-6))",
+    }}>Tim</Checkbox>
 
 ```pug
 span.☘-checkbox(

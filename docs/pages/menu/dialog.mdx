@@ -19,8 +19,8 @@ export {components}
     tag="button"
     class="☘-button"
     onclick="this.nextElementSibling.show()"
-    title="show"
-> 设置Cookie取用 </T>
+    title="show" text="设置Cookie取用"
+/>
 <T tag="dialog" class="☘-dialog" open style={{
     position: 'fixed',
     inset: 'unset',
@@ -68,13 +68,10 @@ dialog.☘-dialog(open style={
     tag="button"
     class="☘-button"
     onclick="this.nextElementSibling.showModal()"
-    title="show modal"
-> 手机莫点 </T>
+    title="show modal" text="手机莫点"
+/>
 <T tag="dialog" class="☘-dialog">
-    <T 
-        tag="p" 
-        class="☘-paragraph"
-    >按 <T tag='kbd' class='☘-kbd'>Esc</T> 才可以关闭 🤣👉📱</T>
+    <T tag="p" class="☘-paragraph">按 <T tag="kbd" class="☘-kbd" text="Esc" /> 才可以关闭 🤣👉📱</T>
 </T>
 
 ```pug
@@ -98,12 +95,13 @@ dialog.☘-dialog
 <T class="☘-popover-wrapper" style={{
     'anchor-name': '--popover-wrapper'
 }}>
-    <T 
+    <T
         tag="button"
         class="☘-button"
         popovertarget="pop"
         title="toggle popover"
-    > 連絡先 </T>
+        text="連絡先"
+    />
     <T 
         tag="dialog"
         class="☘-popover"
@@ -163,11 +161,13 @@ dialog.☘-dialog
 下拉气泡框 `.☘-dropdown-wrapper > .☘-dropdown` 实际上就是预设了绝对定位至下方的 `.☘-popover`
 
 <T class="☘-dropdown-wrapper">
-    <T tag="button"
+    <T
+        tag="button"
         class="☘-button"
         popovertarget="drop"
         title="toggle dropdown"
-    > 連絡先 </T>
+        text="連絡先"
+    />
     <dialog id="drop" popover="auto"></dialog>
     <T class="☘-dropdown sm" style="width:96px">
         <Rennrakusaki />

@@ -3,9 +3,9 @@ layout: "docs/layouts/main.astro"
 title: 标题
 ---
 
-import T from "docs/components/T.astro";
-import {components} from 'docs/components/markdown/index.mdx';
-export {components};
+import T from "docs/components/T.astro"
+import {components} from 'docs/components/markdown/index.mdx'
+export {components}
 
 标题上下边距为1个字形大小：`margin: 1em 0`
 
@@ -65,10 +65,7 @@ h6.☘-title 𓀎 𓀏 𓀐 𓀑 𓀒𓀓  𓀖 𓀗
 
 副标题字体大小比主标题低一级
 
-<T
-    class="☘-title"
-    data-size='1'
-> 红楼梦 <T tag="span" class="☘-title-subtitle">戚序本</T> </T>
+<T class="☘-title" data-size="1">红楼梦 <T tag="span" class="☘-title-subtitle" text="戚序本"/></T>
 
 ```pug
 .☘-title(data-size=1)
@@ -78,10 +75,7 @@ h6.☘-title 𓀎 𓀏 𓀐 𓀑 𓀒𓀓  𓀖 𓀗
 
 ***
 
-<T
-    class="☘-title"
-    tag='h2'
-> 红楼梦 <T tag="span" class="☘-title-subtitle" style="float:right">戚序本</T> </T>
+<T class="☘-title" tag="h2">红楼梦 <T tag="span" class="☘-title-subtitle" style="float:right" text="戚序本"/></T>
 
 ```pug
 h2.☘-title
@@ -95,22 +89,8 @@ h2.☘-title
 <T class="☘-title" tag='h6' dataset={{
     'has-prefix': true,
     'primary': "danger"
-}}>石头记</T>
-<T
-    class="☘-title"
-    sub='戚序本'
-    dataset={{
-        'has-prefix': true,
-        "size": 3
-    }}
-    style="
-        margin: 0;
-        padding-top: 1em;
-        padding-bottom: 1em;
-        --margin-prefix: 1em;
-        --color-title-prefix: var(--gold-5);
-    "
-> 红楼梦 <T tag="span" class="☘-title-subtitle">戚序本</T> </T>
+}} text="石头记" />
+<T class="☘-title" dataset={{ "has-prefix": true, size: 3 }} style="margin: 0; padding-top: 1em; padding-bottom: 1em; --margin-prefix: 1em; --color-title-prefix: var(--gold-5);">红楼梦 <T tag="span" class="☘-title-subtitle" text="戚序本"/></T>
 
 全局变量 `--color-title-prefix`、`--color-blockquote-prefix` 可以自定义前缀主题颜色 OKLCH 通道值
 
