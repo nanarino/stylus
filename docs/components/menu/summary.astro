@@ -2,7 +2,13 @@
 import prefix from "docs/scripts/prefix"
 import clover0 from "docs/icons/logo/outline/clover.svg?raw"
 import clover1 from "docs/icons/logo/fill/clover.svg?raw"
-import type { page, menu } from "docs/scripts/server/menu"
+import {
+    type page,
+    type menu,
+    INDEX_PAGE_NAME,
+    normalizeBuilt,
+} from "docs/scripts/server/menu"
+
 interface Props {
     menu: Array<page | menu>
     base?: string
@@ -63,7 +69,11 @@ const watermark = [
             /**
              * 当前页面
              */
-            if (RegExp(`^${base}${item.path}?$`).test(Astro.url.pathname)) {
+            if (
+                RegExp(`^${base}${item.path}${item.name ? "" : "?"}$`).test(
+                    normalizeBuilt(Astro.url.pathname),
+                )
+            ) {
                 return (
                     <div
                         class={`${prefix}-menu-item ${prefix}-watermark`}
@@ -72,7 +82,7 @@ const watermark = [
                             order: item.name ? 1 : 0,
                         }}
                     >
-                        {item.name || "readme"}
+                        {item.name || INDEX_PAGE_NAME}
                     </div>
                 )
             }
@@ -88,7 +98,7 @@ const watermark = [
                         class={`${prefix}-menu-item-link`}
                         href={base + item.path}
                     >
-                        {item.name || "readme"}
+                        {item.name || INDEX_PAGE_NAME}
                     </a>
                 </div>
             )
