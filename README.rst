@@ -67,7 +67,6 @@
 借物
 ======
 * icon: `arco官方图标库 <https://arco.design/iconbox/lib/89/0/>`_
-* color: OKLCH 色板（通道拆分 token，用法： ``oklch(var(--primary-6))``）
 * background: `css-doodle <https://css-doodle.com/>`_
 * inspiration: `affinity-css <https://github.com/Deep-Codes/affinity-css/>`_
 * fonts:  `HYWenHei-85W <https://www.hanyi.com.cn/index.php>`_ 和 `JetBrains Mono <https://www.jetbrains.com/lp/mono/>`_ （并非本样式库的预设）
