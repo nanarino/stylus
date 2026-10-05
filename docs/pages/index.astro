@@ -82,8 +82,11 @@ nav
             width 6em
             height 6em
             padding 1.5em
-        &.clover:hover
-            filter drop-shadow(0 0 2em oklch(var(--primary-7))) hue-rotate(15deg)
+        &.clover
+            --drop-shadow-alpha-clover 0
+            filter drop-shadow(0 0 2em oklch(var(--primary-7) \/ var(--drop-shadow-alpha-clover))) hue-rotate(15deg)
+            &:hover
+                --drop-shadow-alpha-clover 1
         &.stylus::after
             position absolute
             inset 0
