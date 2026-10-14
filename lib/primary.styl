@@ -1,3 +1,9 @@
+/**
+ * 主题色只改色相。
+ * 自订：`:root { --hue-primary: var(--hue-blue) }`，不用覆盖 1~10。
+ * `[data-primary=success]` 只把 `--hue-primary` 指到 `--hue-success`，
+ * 再在该元素上重新展开通道。
+ */
 color_alias_dict = {
     primary: 'pinkpurple',
     success: 'green',
@@ -6,12 +12,15 @@ color_alias_dict = {
 }
 :root
     for k, v in color_alias_dict
-        for i in range(1 10)
-            {_get_var_by(k, i)} var(_get_var_by(v, i))
-
+        {_get_var_by('hue', k)} var(_get_var_by('hue', v))
         if k != 'primary'
+            for i in 1..10
+                {_get_var_by(k, i)} var(_get_var_by('lightness', i)) var(_get_var_by('chroma', i)) var(_get_var_by('hue', k))
             [data-primary={k}]
-                for i in range(1 10)
-                    {_get_var_by('primary', i)} var(_get_var_by(k, i))
-    
+                {_get_var_by('hue', 'primary')} var(_get_var_by('hue', k))
+
     --outline-color-any--focus var(--black)
+
+:root
+[data-primary]
+    mixin_primary_channels()

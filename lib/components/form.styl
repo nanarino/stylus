@@ -19,8 +19,8 @@
 
 .{prefix}-input-wrapper:where([data-validate])
     &:where(:has(:focus:invalid))
-        for i in range(1 10)
-            {_get_var_by('primary', i)} var(_get_var_by('danger', i))
+        {_get_var_by('hue', 'primary')} var(_get_var_by('hue', 'danger'))
+        mixin_primary_channels()
     &:where(:not(:has(:focus:invalid)))
         .{prefix}-form-item-message
             visibility hidden

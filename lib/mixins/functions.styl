@@ -35,10 +35,12 @@ path(path_str)
  * return: str
  */
 _get_var_by(property, level = none)
-    if  level == none
-        '--%s'%(unquote(property))
+    name = type(property) == 'string' ? unquote(property) : property
+    if level == none
+        '--%s' % name
     else
-        '--%s-%s'%(unquote(property) level)
+        part = type(level) == 'string' ? unquote(level) : level
+        '--%s-%s' % (name part)
 
 /**
  * 保留小数点后 3 位（避免浅档 chroma 被四舍五入成 0）
@@ -57,31 +59,19 @@ _log_ease(t, k = 9)
  * OKLCH Lightness：level 1~10，单条对数曲线（浅色区更密）
  * light: 浅→深用缓入；dark: 深→浅用缓出
  */
-_get_lightness_by(theme, level, gray = false)
+_get_lightness_by(theme, level)
     t = (level - 1) / 9
-    span = gray ? 0.79 : 0.77
     u = theme == 'dark' ? _log_ease(t) : 1 - _log_ease(1 - t)
     base = theme == 'dark' ? 0.18 : 0.97
     sign = theme == 'dark' ? 1 : -1
-    _round3(base + sign * u * span)
+    _round3(base + sign * u * 0.77)
 
 /**
- * OKLCH Chroma：相对 level 6 连续对数衰减；gray 恒为 0
+ * OKLCH Chroma：相对 level 6 连续对数衰减
  * /10 + 小 k：拉近 5/6/7，避免 primary-5 像禁用
+ * gray 不走这条曲线，通道里彩度固定为 0
  */
-_get_chroma_by(theme, level, gray = false)
-    if gray
-        0
-    else
-        peak = theme == 'dark' ? 0.24 : 0.28
-        d = abs(level - 6) / 10
-        _round3(peak * (1 - _log_ease(d, 3)))
-
-/**
- * 多行省略混入
- */
-mixin_line_clamp(number)
-    display -webkit-box
-    -webkit-box-orient vertical
-    -webkit-line-clamp number
-    overflow hidden
+_get_chroma_by(theme, level)
+    peak = theme == 'dark' ? 0.24 : 0.28
+    d = abs(level - 6) / 10
+    _round3(peak * (1 - _log_ease(d, 3)))

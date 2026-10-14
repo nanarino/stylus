@@ -10,12 +10,18 @@
     --black 1 0 0
     color-scheme dark
 /**
- * @desc OKLCH 色板：同 L/C 曲线，hue 由原 Arco RGB 主色（*-6）转换
+ * @desc OKLCH 色板
  *
- * token：`--red-6: L C H`
+ * 色相：`--hue-red` … `--hue-magenta`
+ * 明度：`--lightness-1` … `--lightness-10`（灰度同跨度，彩度为 0）
+ * 彩度：`--chroma-1` … `--chroma-10`
+ *
+ * 通道：`--red-6: var(--lightness-6) var(--chroma-6) var(--hue-red)`
+ * 灰度：`--gray-6: var(--lightness-6) 0 0`
  * 使用：`oklch(var(--red-6))` / `oklch(var(--red-6) / .5)`
  *
  * light: 1 最浅 → 10 最深；dark: 1 最深 → 10 最浅
+ * 改一档明度或彩度会作用到所有色相；改 `--hue-red` 会作用到红的 10 档
  */
 color_hues = {
     red: 26,
@@ -31,16 +37,20 @@ color_hues = {
     magenta: 353
 }
 
-:root, :root[data-theme=light]
+:root
     for name, hue in color_hues
+        {_get_var_by('hue', name)} hue
         for i in 1..10
-            {_get_var_by(name, i)} _get_lightness_by('light', i) _get_chroma_by('light', i) hue
+            {_get_var_by(name, i)} var(_get_var_by('lightness', i)) var(_get_var_by('chroma', i)) var(_get_var_by('hue', name))
     for i in 1..10
-        {_get_var_by('gray', i)} _get_lightness_by('light', i, true) 0 0
+        {_get_var_by('gray', i)} var(_get_var_by('lightness', i)) 0 0
+
+:root, :root[data-theme=light]
+    for i in 1..10
+        {_get_var_by('lightness', i)} _get_lightness_by('light', i)
+        {_get_var_by('chroma', i)} _get_chroma_by('light', i)
 
 :root[data-theme=dark]
-    for name, hue in color_hues
-        for i in 1..10
-            {_get_var_by(name, i)} _get_lightness_by('dark', i) _get_chroma_by('dark', i) hue
     for i in 1..10
-        {_get_var_by('gray', i)} _get_lightness_by('dark', i, true) 0 0
+        {_get_var_by('lightness', i)} _get_lightness_by('dark', i)
+        {_get_var_by('chroma', i)} _get_chroma_by('dark', i)
