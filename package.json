@@ -1,8 +1,9 @@
 {
     "name": "@nanarino/stylus",
     "description": "style lib",
-    "version": "2.0.3",
+    "version": "2.0.4",
     "main": "./dist/style.min.css",
+    "types": "./index.d.ts",
     "scripts": {
         "dev": "astro dev --host",
         "start": "astro dev",
@@ -47,6 +48,7 @@
     },
     "files": [
         "dist",
-        "lib"
+        "lib",
+        "index.d.ts"
     ]
 }
